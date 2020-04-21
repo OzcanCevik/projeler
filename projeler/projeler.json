@@ -1,32 +1,17 @@
 [
 	
-{"isim":"Sensorler",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://img.bgxcdn.com/thumb/large/oaupload/banggood/images/86/2C/87d0646f-7a9a-4552-8574-c78b8deca8f7.JPG",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
-"key" : "arduino"},
+{
 
-{"isim":"Sensorler",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://img.bgxcdn.com/thumb/large/oaupload/banggood/images/86/2C/87d0646f-7a9a-4552-8574-c78b8deca8f7.JPG",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
-"key" : "arduino"},
+"isim":"Koşullu İfadeler",
+"aciklama":"Mehmet manava gidiyor. Manavda sadece muz, elma ve üzüm var. Manav, Mehmet’e hangi meyveden istediğini sorar.",
+"sema":"https://st1.myideasoft.com/idea/ct/82/myassets/blogs/python-ne-icin-kullanilir.jpg",
+"code" : "if meyve ==('uz'):"
+     
+"aciklama1" : "Mehmet’in manav alışverişinin kodları nasıl olmalıdır?",
 
-{"isim":"Sensorler",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://img.bgxcdn.com/thumb/large/oaupload/banggood/images/86/2C/87d0646f-7a9a-4552-8574-c78b8deca8f7.JPG",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
-"key" : "arduino"},
+"key" : "python"
 
-{"isim":"Sensorler",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://img.bgxcdn.com/thumb/large/oaupload/banggood/images/86/2C/87d0646f-7a9a-4552-8574-c78b8deca8f7.JPG",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
-"key" : "arduino"},
+},
 
 
 
@@ -36,113 +21,66 @@
 
 
 
+{
 
-{"isim":"Sensorler",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://img.bgxcdn.com/thumb/large/oaupload/banggood/images/86/2C/87d0646f-7a9a-4552-8574-c78b8deca8f7.JPG",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
-"key" : "raspery"},
+"isim":"Pic Programlama Ders 1",
+"aciklama":"Mehmet manava gidiyor. Manavda sadece muz, elma ve üzüm var. Manav, Mehmet’e hangi meyveden istediğini sorar.",
+"sema":"https://st1.myideasoft.com/idea/ct/82/myassets/blogs/python-ne-icin-kullanilir.jpg",
+"code" : "if meyve ==('uz'):"
+     
+"aciklama1" : "Mehmet’in manav alışverişinin kodları nasıl olmalıdır?",
 
-{"isim":"Sensorler",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://img.bgxcdn.com/thumb/large/oaupload/banggood/images/86/2C/87d0646f-7a9a-4552-8574-c78b8deca8f7.JPG",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
-"key" : "raspery"},
+"key" : "pic"
 
-{"isim":"Sensorler",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://img.bgxcdn.com/thumb/large/oaupload/banggood/images/86/2C/87d0646f-7a9a-4552-8574-c78b8deca8f7.JPG",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
-"key" : "raspery"},
-
-{"isim":"Sensorler",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://img.bgxcdn.com/thumb/large/oaupload/banggood/images/86/2C/87d0646f-7a9a-4552-8574-c78b8deca8f7.JPG",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
-"key" : "raspery"},
-
-
-{"isim":"Sensorler",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://img.bgxcdn.com/thumb/large/oaupload/banggood/images/86/2C/87d0646f-7a9a-4552-8574-c78b8deca8f7.JPG",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
-"key" : "pic"},
-
-{"isim":"Sensorler",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://img.bgxcdn.com/thumb/large/oaupload/banggood/images/86/2C/87d0646f-7a9a-4552-8574-c78b8deca8f7.JPG",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
-"key" : "pic"},
-
-{"isim":"Sensorler",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://img.bgxcdn.com/thumb/large/oaupload/banggood/images/86/2C/87d0646f-7a9a-4552-8574-c78b8deca8f7.JPG",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
-"key" : "pic"},
-
-{"isim":"Sensorler",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://img.bgxcdn.com/thumb/large/oaupload/banggood/images/86/2C/87d0646f-7a9a-4552-8574-c78b8deca8f7.JPG",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
-"key" : "pic"},
-
-{"isim":"Sensorler",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://img.bgxcdn.com/thumb/large/oaupload/banggood/images/86/2C/87d0646f-7a9a-4552-8574-c78b8deca8f7.JPG",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
-"key" : "smd32"},
-
-{"isim":"Sensorler",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://img.bgxcdn.com/thumb/large/oaupload/banggood/images/86/2C/87d0646f-7a9a-4552-8574-c78b8deca8f7.JPG",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
-"key" : "smd32"},
-
-{"isim":"Sensorler",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://img.bgxcdn.com/thumb/large/oaupload/banggood/images/86/2C/87d0646f-7a9a-4552-8574-c78b8deca8f7.JPG",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
-"key" : "smd32"},
-
-{"isim":"Sensorler",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://img.bgxcdn.com/thumb/large/oaupload/banggood/images/86/2C/87d0646f-7a9a-4552-8574-c78b8deca8f7.JPG",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
-"key" : "smd32"},
+},
 
 
 
-{"isim":"Sensorler",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://img.bgxcdn.com/thumb/large/oaupload/banggood/images/86/2C/87d0646f-7a9a-4552-8574-c78b8deca8f7.JPG",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
-"key" : "python"},
 
-{"isim":"Sensorler",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://img.bgxcdn.com/thumb/large/oaupload/banggood/images/86/2C/87d0646f-7a9a-4552-8574-c78b8deca8f7.JPG",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
-"key" : "python"},
 
-{"isim":"Sensorler",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://img.bgxcdn.com/thumb/large/oaupload/banggood/images/86/2C/87d0646f-7a9a-4552-8574-c78b8deca8f7.JPG",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
-"key" : "python"}
+
+
+{
+
+"isim":"SMD 32 DERS",
+"aciklama":"Mehmet manava gidiyor. Manavda sadece muz, elma ve üzüm var. Manav, Mehmet’e hangi meyveden istediğini sorar.",
+"sema":"https://st1.myideasoft.com/idea/ct/82/myassets/blogs/python-ne-icin-kullanilir.jpg",
+"code" : "if meyve ==('uz'):"
+     
+"aciklama1" : "Mehmet’in manav alışverişinin kodları nasıl olmalıdır?",
+
+"key" : "smd32"
+
+},
+
+
+
+
+{
+
+"isim":"ARDUINO DERS",
+"aciklama":"Mehmet manava gidiyor. Manavda sadece muz, elma ve üzüm var. Manav, Mehmet’e hangi meyveden istediğini sorar.",
+"sema":"https://st1.myideasoft.com/idea/ct/82/myassets/blogs/python-ne-icin-kullanilir.jpg",
+"code" : "if meyve ==('uz'):"
+     
+"aciklama1" : "Mehmet’in manav alışverişinin kodları nasıl olmalıdır?",
+
+"key" : "arduino"
+
+},
+
+
+{
+
+"isim":"Raspery",
+"aciklama":"Mehmet manava gidiyor. Manavda sadece muz, elma ve üzüm var. Manav, Mehmet’e hangi meyveden istediğini sorar.",
+"sema":"https://st1.myideasoft.com/idea/ct/82/myassets/blogs/python-ne-icin-kullanilir.jpg",
+"code" : "if meyve ==('uz'):"
+     
+"aciklama1" : "Mehmet’in manav alışverişinin kodları nasıl olmalıdır?",
+
+"key" : "raspery"
+
+}
 
 ]
