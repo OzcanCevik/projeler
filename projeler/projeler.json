@@ -2,12 +2,107 @@
 	
 {
 
-"isim":"Koşullu İfadeler",
-"aciklama":"Mehmet manava gidiyor. Manavda sadece muz, elma ve üzüm var. Manav, Mehmet’e hangi meyveden istediğini sorar.",
+"isim":"YENİ GELEN",
+"aciklama":"AÇILAMA ÜSTÜNDE AÇIKLAMA",
 "sema":"https://st1.myideasoft.com/idea/ct/82/myassets/blogs/python-ne-icin-kullanilir.jpg",
-"code" : "if meyve ==('uz'):",
+"code" : "const int buton = 0;
+const int led1 = 2;
+const int led3 = 5;
+
+int butondurumu = 0;
+int deger = 0;
+void setup()
+{
+
+//Pinlerin giriş – çıkış tanımlaması yapılıyor
+pinMode(buton, INPUT);
+pinMode(led1, OUTPUT);
+pinMode(led3, OUTPUT);
+
+}
+
+void loop()
+{
+//buton değeri buton durumu değişkenine yazılıyor
+butondurumu = digitalRead(buton);
+
+//Butona basıldı ve deger değişkeni 0 ise
+if ( (butondurumu == HIGH) && (deger == 0) )
+
+{
+// 1. kez basılınca yapılacaklar yazılabilir.
+
+digitalWrite(led1, HIGH);
+digitalWrite(led3, HIGH);
+deger=1;
+delay(10);
+}
+
+//Buton bırakıldı ve deger değişkeni 1 ise
+if ( (butondurumu == LOW) && (deger == 1) )
+
+{
+
+// 1. kez basıp bırakınca yapılacaklar yazılabilir.
+
+deger=2;
+delay(10);
+}
+
+//Butona basıldı ve deger değişkeni 2 ise
+if ( (butondurumu == HIGH) && (deger == 2) )
+
+{
+// 2. kez basılınca yapılacaklar yazılabilir.
+
+digitalWrite(led1, LOW);
+digitalWrite(led3, HIGH);
+deger=3;
+delay(10);
+}
+
+//Buton bırakıldı ve deger değişkeni 3 ise
+if ( (butondurumu == LOW) && (deger == 3) )
+
+{
+
+// 2. kez basıp bırakınca yapılacaklar yazılabilir.
+
+deger=4;
+delay(10);
+}
+
+//Butona basıldı ve deger değişkeni 4 ise
+if ( (butondurumu == HIGH) && (deger == 4) )
+
+{
+// 3. kez basılınca yapılacaklar yazılabilir.
+
+digitalWrite(led1, LOW);
+digitalWrite(led3, LOW);
+deger=5;
+delay(10);
+}
+
+//Buton bırakıldı ve deger değişkeni 5 ise
+if ( (butondurumu == LOW) && (deger == 5) )
+
+{
+
+// 3. kez basıp bırakınca yapılacaklar yazılabilir.
+
+deger=6;
+delay(10);
+}
+
+//Butona basıldı ve deger değişkeni 6 ise
+if ( (butondurumu == HIGH) && (deger == 6) )
+
+{
+}
+}",
      
-"aciklama1" : "Mehmet’in manav alışverişinin kodları nasıl olmalıdır?",
+"aciklama1" : "ASDSADSADSADSDASDSADSADSADASDASDAS",
 
 "key" : "python"
 
