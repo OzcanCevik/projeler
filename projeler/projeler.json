@@ -4,7 +4,7 @@
 
 "isim":"0-9 ARASI SAYICI",
 "aciklama":"AÇILAMA ÜSTÜNDE AÇIKLAMA",
-"sema":"file:///C:/Users/Lenovo/Desktop/sil2.PNG",
+"sema":"https://www.direnc.net/Data/EditorFiles/aciklama-gorselleri-2/7-segment-display-ekran-pinout.jpg",
 "code" : "const int buton = 0;
 const int led1 = 2;
 const int led3 = 5;
