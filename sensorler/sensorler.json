@@ -30,10 +30,46 @@
 	
 {"isim":"JOYSTİCK",
 "aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://robu.in/wp-content/uploads/2017/06/3-2.jpg",
+"sema":"https://imgaz2.staticbg.com/thumb/large/oaupload/ser1/banggood/images/06/77/93bfd14a-bb40-4387-9db6-fec35de2f972.JPG",
 "code" : "(void serialEvent() {})",
 "aciklama1" : "Açıklama 2",
 "key" : "arduino"},
+
+{"isim":"DARBE SENSÖRÜ",
+"aciklama":"Bu Bir Sensor Uygulaması",
+"sema":"https://n11scdn.akamaized.net/a1/450/elektronik/diger/darbe-sensor-modulu-arduino__0822448645984719.jpg",
+"code" : "(void serialEvent() {})",
+"aciklama1" : "Açıklama 2",
+"key" : "arduino"},
+	
+{"isim":"TİTREŞİM SENSÖRÜ",
+"aciklama":"Bu Bir Sensor Uygulaması",
+"sema":"https://market.projehocam.com/wp-content/uploads/sw-420-sensor.jpg",
+"code" : "(void serialEvent() {})",
+"aciklama1" : "Açıklama 2",
+"key" : "arduino"},
+	
+{"isim":"TİLT SWİTCH MODÜLÜ",
+"aciklama":"Bu Bir Sensor Uygulaması",
+"sema":"https://arduinomodules.info/wp-content/uploads/KY-020_tilt_switch_module_arduino.jpg",
+"code" : "(void serialEvent() {})",
+"aciklama1" : "Açıklama 2",
+"key" : "arduino"},
+	
+{"isim":"RGB LED MODÜLÜ",
+"aciklama":"Bu Bir Sensor Uygulaması",
+"sema":"https://www.robotistan.com/3-renkli-rgb-led-modulu-smd-rgb-led-13708-54-B.jpg",
+"code" : "(void serialEvent() {})",
+"aciklama1" : "Açıklama 2",
+"key" : "arduino"},
+	
+{"isim":"KIZILÖTESİ LED MODÜLÜ",
+"aciklama":"Bu Bir Sensor Uygulaması",
+"sema":"https://st3.myideasoft.com/idea/bx/32/myassets/products/065/kizil-otesi-engel-sensoru-arduino-kizil-otesi-modul.jpg?revision=1560357559",
+"code" : "(void serialEvent() {})",
+"aciklama1" : "Açıklama 2",
+"key" : "arduino"},
+	
 
 
 
