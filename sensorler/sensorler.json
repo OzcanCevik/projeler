@@ -21,9 +21,16 @@
 "aciklama1" : "Açıklama 2",
 "key" : "arduino"},
 
-{"isim":"RELAY",
+{"isim":"RÖLE",
 "aciklama":"Bu Bir Sensor Uygulaması",
 "sema":"https://robu.in/wp-content/uploads/2017/06/3-2.jpg",
+"code" : "(void serialEvent() {})",
+"aciklama1" : "Açıklama 2",
+"key" : "arduino"},
+	
+{"isim":"JOYSTİCK",
+"aciklama":"Bu Bir Sensor Uygulaması",
+"sema":"https://www.digitspace.com/image/cache/catalog/products1017/5-Pin%202-Way%20PS%202%20Joystick%20Gam%20e%20Controller%20M%20odule%20for%20Ardu%20ino-1-550x550.jpg",
 "code" : "(void serialEvent() {})",
 "aciklama1" : "Açıklama 2",
 "key" : "arduino"},
