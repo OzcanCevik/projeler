@@ -6,40 +6,8 @@
 "aciklama":"AÇILAMA ÜSTÜNDE AÇIKLAMA",
 "sema":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRxkeCW3d9eT8OQGxGuhwk5_up1xB6kxVQxL81ITrUVhjEIje28&usqp=CAU",
 "code" : "const int buton = 0;
-const int led1 = 2;
-const int led3 = 5;
+https://i.ytimg.com/vi/Pc67yjvntIA/maxresdefault.jpg
 
-int butondurumu = 0;
-int deger = 0;
-void setup()
-{
-
-//Pinlerin giriş – çıkış tanımlaması yapılıyor
-pinMode(buton, INPUT);
-pinMode(led1, OUTPUT);
-pinMode(led3, OUTPUT);
-
-}
-
-void loop()
-{
-//buton değeri buton durumu değişkenine yazılıyor
-butondurumu = digitalRead(buton);
-
-//Butona basıldı ve deger değişkeni 0 ise
-if ( (butondurumu == HIGH) && (deger == 0) )
-
-{
-// 1. kez basılınca yapılacaklar yazılabilir.
-
-digitalWrite(led1, HIGH);
-digitalWrite(led3, HIGH);
-deger=1;
-delay(10);
-}
-
-//Buton bırakıldı ve deger değişkeni 1 ise
-if ( (butondurumu == LOW) && (deger == 1) )
 
 {
 
