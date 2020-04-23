@@ -4,7 +4,7 @@
 
 "isim":"0-9 ARASI SAYICI",
 "aciklama":"AÇILAMA ÜSTÜNDE AÇIKLAMA",
-"sema":"https://www.direnc.net/Data/EditorFiles/aciklama-gorselleri-2/7-segment-display-ekran-pinout.jpg",
+"sema":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRxkeCW3d9eT8OQGxGuhwk5_up1xB6kxVQxL81ITrUVhjEIje28&usqp=CAU",
 "code" : "const int buton = 0;
 const int led1 = 2;
 const int led3 = 5;
