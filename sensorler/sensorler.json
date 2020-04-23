@@ -23,7 +23,7 @@
 
 {"isim":"RELAY",
 "aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://lastminuteengineers.com/wp-content/uploads/2019/11/tutorial-for-controlling-ac-devices-with-relay-module-and-arduino.jpg",
+"sema":"https://robu.in/wp-content/uploads/2017/06/3-2.jpg",
 "code" : "(void serialEvent() {})",
 "aciklama1" : "Açıklama 2",
 "key" : "arduino"},
