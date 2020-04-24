@@ -3,8 +3,8 @@
 {
 
 "isim":"0-9 ARASI SAYICI",
-"aciklama":"Sayıcı devreleri, giriş darbelerine bağlı olarak belirli bir durum dizisini tekrarlayan lojik devrelerdir. Bu devrede 0-9 arası sayılar belirli bir süre aralığında sırayla sayıdırlmaktadır.",
-"sema":"https://i.imgyukle.com/2020/04/24/QfWkrN.png",
+"aciklama":"Sayıcı devreleri, giriş darbelerine bağlı olarak belirli bir durum dizisini tekrarlayan lojik devrelerdir. Bu devrede 0-9 arası sayılar belirli bir süre aralığında sırayla saydırlmaktadır.",
+"sema":"https://i.imgyukle.com/2020/04/24/QflQVM.png",
 "code" : "int e=8, d=7, c=6, b=5, a=4, f=3, g=2; //Ledlerin bağlı olduğu pinler.
 void setup()
 {
