@@ -4,9 +4,11 @@
 
 "isim":"0-9 ARASI SAYICI",
 "aciklama":"Sayıcı devreleri, giriş darbelerine bağlı olarak belirli bir durum dizisini tekrarlayan lojik devrelerdir. Bu devrede 0-9 arası sayılar belirli bir süre aralığında sırayla saydırlmaktadır.
-Kullanılan malzemeler  1=Arduino uno
+Kullanılan malzemeler  
+1= Arduino uno
 2= Ortak anotlu 7 segment display
-3=Deney bordu ve jumper kablolar",
+3= Deney bordu ve jumper kablolar
+4= 330 ohm direnç",
 "sema":"https://i.imgyukle.com/2020/04/24/QflQVM.png",
 "code" : "int e=8, d=7, c=6, b=5, a=4, f=3, g=2; //Ledlerin bağlı olduğu pinler.
 void setup()
@@ -122,9 +124,11 @@ void RakamGoster(int rakam){   //Değişken içerisindeki , i değeri neyse o ca
 }",
      
 "aciklama1" : "Devreyi yaparken dikkat edilmesi gereken hususlar.
-	1.Kullanılan displayın artak anot veya ortak katotmu olduğu
-	2.Bu devrede ortak anotlu display kullanılmıştır
-	3.Sizin kullandınız display ortak katot ise yapmanız gerekenler A=direncin çıkışnı gnd ye bağlamanız B=kod içerisinde bulunan tüm HIGH ları LOW , LOW ları HIGH yapmanızdır",
+	1= Kullanılan displayın artak anot veya ortak katotmu olduğu
+	2= Bu devrede ortak anotlu display kullanılmıştır
+	3= Sizin kullandınız display ortak katot ise yapmanız gerekenler.
+	A= Diencin çıkışnı gnd yazan pine bağlamanız
+	B=kod içerisinde bulunan tüm HIGH ları LOW , LOW ları HIGH yapmanızdır",
 
 "key" : "arduino"
 
