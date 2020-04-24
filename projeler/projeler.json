@@ -139,7 +139,7 @@ Kullanılan malzemeler
 2=Arduino 
 3=Deney bordu ve Jumper kablolar 
 4=5V Pil veya adaptör şema üzerinde 9v kullanılmıştır",
-"sema":"https://st1.myideasoft.com/idea/ct/82/myassets/blogs/python-ne-icin-kullanilir.jpg",
+"sema":"https://i.imgyukle.com/2020/04/24/QwOUZ1.png",
 "code" : "#include<Servo.h>      //Servonun çalışması için gerekli olan kütüphane 
 Servo servo1;          //Servo 1 adında değişken oluşturuldu
 int aci;              //Açı değerinin tutulacağı değişken
