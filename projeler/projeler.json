@@ -3,71 +3,119 @@
 {
 
 "isim":"0-9 ARASI SAYICI",
-"aciklama":"AÇILAMA ÜSTÜNDE AÇIKLAMA",
+"aciklama":"Sayıcı devreleri, giriş darbelerine bağlı olarak belirli bir durum dizisini tekrarlayan lojik devrelerdir. Bu devrede 0-9 arası sayılar belirli bir süre aralığında sırayla sayıdırlmaktadır.",
 "sema":"https://i.imgyukle.com/2020/04/24/QfWkrN.png",
-"code" : "const int buton = 0;
-https://i.ytimg.com/vi/Pc67yjvntIA/maxresdefault.jpg
-
-
+"code" : "int e=8, d=7, c=6, b=5, a=4, f=3, g=2; //Ledlerin bağlı olduğu pinler.
+void setup()
 {
-
-// 1. kez basıp bırakınca yapılacaklar yazılabilir.
-
-deger=2;
-delay(10);
+  pinMode(a, OUTPUT);
+  pinMode(b, OUTPUT);
+  pinMode(c, OUTPUT);
+  pinMode(d, OUTPUT);   //LED PİNLERİ ÇIKIŞ OLARAK TANIMLANDI
+  pinMode(e, OUTPUT);
+  pinMode(f, OUTPUT);
+  pinMode(g, OUTPUT);
 }
-
-//Butona basıldı ve deger değişkeni 2 ise
-if ( (butondurumu == HIGH) && (deger == 2) )
-
-{
-// 2. kez basılınca yapılacaklar yazılabilir.
-
-digitalWrite(led1, LOW);
-digitalWrite(led3, HIGH);
-deger=3;
-delay(10);
+void loop(){
+  int i;
+  for(i=0; i<10; i++){   //For döngüsünün kaç kere tekrarlanacağı belirtilir. (9 kere)
+    RakamGoster(i);
+    delay(1000);    //Sayırların geçiş süreleri (1 sn)
+  }
 }
-
-//Buton bırakıldı ve deger değişkeni 3 ise
-if ( (butondurumu == LOW) && (deger == 3) )
-
-{
-
-// 2. kez basıp bırakınca yapılacaklar yazılabilir.
-
-deger=4;
-delay(10);
-}
-
-//Butona basıldı ve deger değişkeni 4 ise
-if ( (butondurumu == HIGH) && (deger == 4) )
-
-{
-// 3. kez basılınca yapılacaklar yazılabilir.
-
-digitalWrite(led1, LOW);
-digitalWrite(led3, LOW);
-deger=5;
-delay(10);
-}
-
-//Buton bırakıldı ve deger değişkeni 5 ise
-if ( (butondurumu == LOW) && (deger == 5) )
-
-{
-
-// 3. kez basıp bırakınca yapılacaklar yazılabilir.
-
-deger=6;
-delay(10);
-}
-
-//Butona basıldı ve deger değişkeni 6 ise
-if ( (butondurumu == HIGH) && (deger == 6) )
-
-{
-}
+void RakamGoster(int rakam){   //Değişken içerisindeki , i değeri neyse o case bloğu çalışır.
+  switch(rakam){
+    case 0 :   // 0 SAYISINI YAZDIRIR . İ değeri 0 ise ekrana 0 yazılır 
+      digitalWrite(a,LOW);
+      digitalWrite(b,LOW);
+      digitalWrite(c,LOW);
+      digitalWrite(d,LOW);
+      digitalWrite(e,LOW);
+      digitalWrite(f,LOW);
+      digitalWrite(g,HIGH);
+      break;     //Case bloğunu sonlandırır.
+    case 1:     // 1 SAYISINI YAZDIRIR
+      digitalWrite(a,HIGH);
+      digitalWrite(b,LOW);
+      digitalWrite(c,LOW);
+      digitalWrite(d,HIGH);
+      digitalWrite(e,HIGH);
+      digitalWrite(f,HIGH);
+      digitalWrite(g,HIGH);
+      break;
+    case 2:     //2 SAYISINI YAZDIRIR
+      digitalWrite(a,LOW);
+      digitalWrite(b,LOW);
+      digitalWrite(c,HIGH);
+      digitalWrite(d,LOW);
+      digitalWrite(e,LOW);
+      digitalWrite(f,HIGH);
+      digitalWrite(g,LOW);
+      break;
+    case 3:    //3 SAYISINI YAZDIRIR
+      digitalWrite(a,LOW);
+      digitalWrite(b,LOW);
+      digitalWrite(c,LOW);
+      digitalWrite(d,LOW);
+      digitalWrite(e,HIGH);
+      digitalWrite(f,HIGH);
+      digitalWrite(g,LOW);
+      break;
+    case 4:  //4 SAYISINI YAZDIRIR
+      digitalWrite(a,HIGH);
+      digitalWrite(b,LOW);
+      digitalWrite(c,LOW);
+      digitalWrite(d,HIGH);
+      digitalWrite(e,HIGH);
+      digitalWrite(f,LOW);
+      digitalWrite(g,LOW);
+      break;
+    case 5:     //5 SAYISINI YAZDIRIR
+      digitalWrite(a,LOW);
+      digitalWrite(b,HIGH);
+      digitalWrite(c,LOW);
+      digitalWrite(d,LOW);
+      digitalWrite(e,HIGH);
+      digitalWrite(f,LOW);
+      digitalWrite(g,LOW);
+      break;
+    case 6:    //6 SAYISINI YAZDIRIR
+      digitalWrite(a,LOW);
+      digitalWrite(b,HIGH);
+      digitalWrite(c,LOW);
+      digitalWrite(d,LOW);
+      digitalWrite(e,LOW);
+      digitalWrite(f,LOW);
+      digitalWrite(g,LOW);
+      break;
+    case 7:    //7 SAYISINI YAZDIRIR
+      digitalWrite(a,LOW);
+      digitalWrite(b,LOW);
+      digitalWrite(c,LOW);
+      digitalWrite(d,HIGH);
+      digitalWrite(e,HIGH);
+      digitalWrite(f,HIGH);
+      digitalWrite(g,HIGH);
+      break;
+    case 8:    // 8 SAYSINI YAZDIRIR
+      digitalWrite(a,LOW);
+      digitalWrite(b,LOW);
+      digitalWrite(c,LOW);
+      digitalWrite(d,LOW);
+      digitalWrite(e,LOW);
+      digitalWrite(f,LOW);
+      digitalWrite(g,LOW);
+      break;
+    case 9:    //9 SAYISINI YAZDIRIR
+      digitalWrite(a,LOW);
+      digitalWrite(b,LOW);
+      digitalWrite(c,LOW);
+      digitalWrite(d,LOW);
+      digitalWrite(e,HIGH);
+      digitalWrite(f,LOW);
+      digitalWrite(g,LOW);
+      break;
+  }
 }",
      
 "aciklama1" : "ASDSADSADSADSDASDSADSADSADASDASDAS",
