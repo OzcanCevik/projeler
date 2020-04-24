@@ -3,7 +3,10 @@
 {
 
 "isim":"0-9 ARASI SAYICI",
-"aciklama":"Sayıcı devreleri, giriş darbelerine bağlı olarak belirli bir durum dizisini tekrarlayan lojik devrelerdir. Bu devrede 0-9 arası sayılar belirli bir süre aralığında sırayla saydırlmaktadır.",
+"aciklama":"Sayıcı devreleri, giriş darbelerine bağlı olarak belirli bir durum dizisini tekrarlayan lojik devrelerdir. Bu devrede 0-9 arası sayılar belirli bir süre aralığında sırayla saydırlmaktadır.
+Kullanılan malzemeler  1=Arduino uno
+2= Ortak anotlu 7 segment display
+3=Deney bordu ve jumper kablolar",
 "sema":"https://i.imgyukle.com/2020/04/24/QflQVM.png",
 "code" : "int e=8, d=7, c=6, b=5, a=4, f=3, g=2; //Ledlerin bağlı olduğu pinler.
 void setup()
@@ -126,11 +129,46 @@ void RakamGoster(int rakam){   //Değişken içerisindeki , i değeri neyse o ca
 "key" : "arduino"
 
 },
+	
+{
 
+"isim":"İLERİ GERİ SERVO KONTROL",
+"aciklama":"Servo motorların belirli zaman aralıklarında ileri geri yapmasını sağlar 
+Kullanılan malzemeler 
+1= SG909G mini servo motor
+2=Arduino 
+3=Deney bordu ve Jumper kablolar 
+4=5V Pil veya adaptör şema üzerinde 9v kullanılmıştır",
+"sema":"https://st1.myideasoft.com/idea/ct/82/myassets/blogs/python-ne-icin-kullanilir.jpg",
+"code" : "#include<Servo.h>      //Servonun çalışması için gerekli olan kütüphane 
+Servo servo1;          //Servo 1 adında değişken oluşturuldu
+int aci;              //Açı değerinin tutulacağı değişken
+ 
+void setup() {
+ servo1.attach(2);   //Servonun bağlı olduğu pin numarası (D2)
+}
+ 
+void loop() {
+ 
+for(aci=0;aci<=180;aci+=3){
+      //aci değeri 180 den küçük veya eşit  olduğu sürece ileri yönde dönecek servo her dönmede 3 adım 
+     //büyük olursa ters yönde dönmeye başlar
+servo1.write(aci);
+delay(100);                         //Geri dönüş için bekleme süresi
+}
+for(aci=180;aci>=0;aci-=3){      //Ters yönde dönerken atacağı adım sayısı  (-3 adım her seferde)
+servo1.write(aci);      
+delay(100);     //ileri dönüş için 100ms bekle
+}
+}",
+     
+"aciklama1" : "Devrede dikkat edilmesi gerekenler 
+1= Servoyu harici güç kaynağı ile besleyin arduinonun vereceği akım miktarı servoyu çalıştırmaz ve kartı bozar.
+2=Pilinizin - (eksi ucunu) Arduino üzerindeki gnd ye bağlayın", 
 
+"key" : "arduino"
 
-
-
+},
 
 
 
@@ -170,18 +208,7 @@ void RakamGoster(int rakam){   //Değişken içerisindeki , i değeri neyse o ca
 
 
 
-{
 
-"isim":"ARDUINO DERS",
-"aciklama":"Mehmet manava gidiyor. Manavda sadece muz, elma ve üzüm var. Manav, Mehmet’e hangi meyveden istediğini sorar.",
-"sema":"https://st1.myideasoft.com/idea/ct/82/myassets/blogs/python-ne-icin-kullanilir.jpg",
-"code" : "if meyve ==('uz'):",
-     
-"aciklama1" : "Mehmet’in manav alışverişinin kodları nasıl olmalıdır?",
-
-"key" : "arduino"
-
-},
 
 
 {
