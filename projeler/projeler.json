@@ -118,7 +118,10 @@ void RakamGoster(int rakam){   //Değişken içerisindeki , i değeri neyse o ca
   }
 }",
      
-"aciklama1" : "ASDSADSADSADSDASDSADSADSADASDASDAS",
+"aciklama1" : "Devreyi yaparken dikkat edilmesi gereken hususlar.
+	1.Kullanılan displayın artak anot veya ortak katotmu olduğu
+	2.Bu devrede ortak anotlu display kullanılmıştır
+	3.Sizin kullandınız display ortak katot ise yapmanız gerekenler A=direncin çıkışnı gnd ye bağlamanız B=kod içerisinde bulunan tüm HIGH ları LOW , LOW ları HIGH yapmanızdır",
 
 "key" : "arduino"
 
