@@ -123,12 +123,12 @@ void RakamGoster(int rakam){   //Değişken içerisindeki , i değeri neyse o ca
   }
 }",
      
-"aciklama1" : "Devreyi yaparken dikkat edilmesi gereken hususlar.
+"aciklama1" : "Devreyi kurarken dikkat edilmesi gereken hususlar.
 	1= Kullanılan displayın artak anot veya ortak katotmu olduğu
 	2= Bu devrede ortak anotlu display kullanılmıştır
 	3= Sizin kullandınız display ortak katot ise yapmanız gerekenler.
-	A= Diencin çıkışnı gnd yazan pine bağlamanız
-	B=kod içerisinde bulunan tüm HIGH ları LOW , LOW ları HIGH yapmanızdır",
+	A= Direncin çıkışnı gnd yazan pine bağlamanız
+	B= Kod içerisinde bulunan tüm HIGH ları LOW , LOW ları HIGH yapmanızdır",
 
 "key" : "arduino"
 
@@ -140,9 +140,9 @@ void RakamGoster(int rakam){   //Değişken içerisindeki , i değeri neyse o ca
 "aciklama":"Servo motorların belirli zaman aralıklarında ileri geri yapmasını sağlar 
 Kullanılan malzemeler 
 1= SG909G mini servo motor
-2=Arduino 
-3=Deney bordu ve Jumper kablolar 
-4=5V Pil veya adaptör şema üzerinde 9v kullanılmıştır",
+2= Arduino 
+3= Deney bordu ve Jumper kablolar 
+4= 5V Pil veya adaptör.",
 "sema":"https://i.imgyukle.com/2020/04/24/QwOUZ1.png",
 "code" : "#include<Servo.h>      //Servonun çalışması için gerekli olan kütüphane 
 Servo servo1;          //Servo 1 adında değişken oluşturuldu
@@ -166,9 +166,91 @@ delay(100);     //ileri dönüş için 100ms bekle
 }
 }",
      
-"aciklama1" : "Devrede dikkat edilmesi gerekenler 
+"aciklama1" : "Devreyi kurarken dikkat edilmesi gerekenler. 
 1= Servoyu harici güç kaynağı ile besleyin arduinonun vereceği akım miktarı servoyu çalıştırmaz ve kartı bozar.
-2=Pilinizin - (eksi ucunu) Arduino üzerindeki gnd ye bağlayın", 
+2= Pilinizin - (eksi ucunu) Arduino üzerindeki gnd ye bağlayın", 
+
+"key" : "arduino"
+
+},
+	
+{
+
+"isim":"Seri monitör ile led kontrolü",
+"aciklama":"Arduino içerisinde bulunan serial ekran ile kaç adet ledin yanık kaçının sönük durumda olacağının kontrolü
+Kullanılan malzemeler
+1= Arduino
+2= BreadBoard ve jumper kablolar
+3= 5adet mantar led
+4= 5 adet 220 ohm direnç
+NOT/devreyi kurduktan sonra arduino ide üzerindeki serial monitörü başlatın 1ve5 arası değerler yazarak test edebilirsiniz",
+"sema":"https://i.imgyukle.com/2020/04/24/Qwso7n.png",
+"code" : "void blink(int LEDPin, int LEDOnTime, int LEDOffTime) // LED yakıp sönme fonksiyonu
+{
+  digitalWrite(LEDPin, HIGH);
+  delay(LEDOnTime);
+  digitalWrite(LEDPin, LOW);
+  delay(LEDOffTime);
+}
+
+void setup(){
+  for(int i=2; i<7; i++){ pinMode(i, OUTPUT);} //2-7 arasında çalışıcak for döngüsü başlatılır	
+  Serial.begin(9600);    //seri haberleşme başlatılır
+}
+
+void loop(){
+  if (Serial.available()) {
+
+    
+    char ser = Serial.read();   //Serial monitörden okuma yapıyoruz 
+    
+    switch (ser) {        //Seri monitörden okunan değer hangi case numarası ile eşleşirse o case bloğu çalışır.
+      case '1':          //Seri monitörden 1 yazılırsa bu case değeri ile eşleşir ve bu blok çalışır
+      digitalWrite(2 , HIGH);
+      digitalWrite(3 , LOW);
+      digitalWrite(4 , LOW);
+      digitalWrite(5 , LOW);
+      digitalWrite(6 , LOW);
+      delay(500);         //bekleme süresi
+        break;           //case bloğunu sonlandırır.
+        
+      case '2':
+        digitalWrite(2 , HIGH);
+        digitalWrite(3 , HIGH);
+        digitalWrite(4 , LOW);
+        digitalWrite(5 , LOW);
+        digitalWrite(6 , LOW);
+        break;
+        
+      case '3':
+        digitalWrite(2 , HIGH);
+        digitalWrite(3 , HIGH);
+        digitalWrite(4 , HIGH);
+        digitalWrite(5 , LOW);
+        digitalWrite(6 , LOW);
+           
+        break;
+      case '4':
+        digitalWrite(2 , HIGH);
+        digitalWrite(3 , HIGH);
+        digitalWrite(4 , HIGH);
+        digitalWrite(5 , HIGH);
+        digitalWrite(6 , LOW);
+        break;
+      case '5':
+        digitalWrite(2 , HIGH);
+        digitalWrite(3 , HIGH);
+        digitalWrite(4 , HIGH);
+        digitalWrite(5 , HIGH);
+        digitalWrite(6 , HIGH);
+        break;
+    } 
+  }
+}",
+     
+"aciklama1" : "Devreyi kurarken dikkat etmeniz gereken hususlar
+1= ledlerin artı ayaklarına direnç bağlayıp arduino üzerindeki dijital pinlere bağlayın
+2= tüm ledlerin eksi(-) lerini arduino üzerindeki gnd pinine bağlayın",
 
 "key" : "arduino"
 
