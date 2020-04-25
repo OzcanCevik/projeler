@@ -3,7 +3,7 @@
 {
 
 "isim":"0-9 ARASI SAYICI",
-"aciklama":"Sayıcı devreleri, giriş darbelerine bağlı olarak belirli bir durum dizisini tekrarlayan lojik devrelerdir. Bu devrede 0-9 arası sayılar belirli bir süre aralığında sırayla saydırlmaktadır.
+"aciklama":"Sayıcı devreleri, giriş darbelerine bağlı olarak belirli bir durum dizisini tekrarlayan lojik devrelerdir. Bu devrede 0-9 arası sayılar belirli bir süre aralığında sırayla yazdırılmaktadır.
 Kullanılan malzemeler  
 1= Arduino uno
 2= Ortak anotlu 7 segment display
@@ -156,7 +156,7 @@ void loop() {
  
 for(aci=0;aci<=180;aci+=3){
       //aci değeri 180 den küçük veya eşit  olduğu sürece ileri yönde dönecek servo her dönmede 3 adım 
-     //büyük olursa ters yönde dönmeye başlar
+     //180 den büyük olursa ters yönde dönmeye başlar
 servo1.write(aci);
 delay(100);                         //Geri dönüş için bekleme süresi
 }
@@ -249,18 +249,192 @@ void loop(){
 }",
      
 "aciklama1" : "Devreyi kurarken dikkat etmeniz gereken hususlar
-1= ledlerin artı ayaklarına direnç bağlayıp arduino üzerindeki dijital pinlere bağlayın
+1= ledlerin artı(+) kutuplarına direnç bağlayıp arduino üzerindeki dijital pinlere bağlayın
 2= tüm ledlerin eksi(-) lerini arduino üzerindeki gnd pinine bağlayın",
 
 "key" : "arduino"
 
 },
+	
+{
 
+"isim":"Potansiyometre ile servo kontrolü",
+"aciklama":"Potansiyometre yani ayarlı direnç kullanılarak servonun açı değerinin kontrolü
+Malzeme listesi
+1= Değeri farketmeksizin potansiyometre (10K olabilir)
+2= Arduino , jumgper kablolar
+3= Servo (mg90)",
+"sema":"https://i.imgyukle.com/2020/04/25/Q0uTHR.png",
+"code" : "
+#include <Servo.h>   //Kütüphane eklendi
 
+Servo myservo;     // Servoyu kontrol etmek için servo nesnesi oluşturuldu
 
+int potpin = A5;  //Potansiyometrenin bağlı olduğu pin
+int val;         //analog değer okumak ve kaydetmek için değişken
+
+void setup() {
+  myservo.attach(2);  //Servonun bağlı olduğu pin numarası
+}
+
+void loop() {
+  val = analogRead(potpin);             //A5 pininden okunan değer val değişkenine atılır
+  val = map(val, 0, 1023, 0, 180);     //Okunan değer 0-180 aralığına çekilir
+               //0,1023 pottan okunan direnç değeri     
+  myservo.write(val);                   //Servo açı değerini saklamak için değişken
+  delay(15);                           //harkete geçmek için bekleme süresi
+}",
+     
+"aciklama1" : "Devre üzerinde 1 adet servo kullanıldığı için harici besleme kullanılmamıştır servo sayısının artırılması veya motorun zorlanacağı durumunda harici kaynaktan besleyiniz yoksa arduino zarar görebilir
+NOT/harici kaynak tan besleme yapılacağı zaman pilin -(eksi) ucunu arduino gnd ile birleştiriniz",
+
+"key" : "arduino"
+
+},
 
 {
 
+"isim":"LCD EKRAN KULLANIMI",
+"aciklama":"Lcd ekran üzerine istenilen yazının yazılması
+Malzemeler
+1= LCD EKRAN
+2= Arduino jumper kablolar
+3= 220 ohm direnç
+4= BreadBoard",
+"sema":"https://i.imgyukle.com/2020/04/25/Q0Tu4N.png",
+"code" : "#include <LiquidCrystal.h>
+
+const int rs = 9, en = 8, d4 = 5, d5 = 4, d6 = 3, d7 = 2;   //pin numaraları
+
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);   //pin numaraları 
+
+
+
+void setup() 
+{
+lcd.begin(16, 2);
+}
+void loop() 
+{            
+  lcd.setCursor(2, 0);   //sol üsteki yazının ekrandaki konumu
+  lcd.print("BLUE");    //Ekranda sol üst tarafa yazdırılıcak kelime
+  lcd.setCursor(0, 1); //sol alttaki yazının konumu
+  lcd.print("EYES");  //Ekranda sol alt tarafa yazdırılıcak kelime
+  delay(1500);       //bekleme süresi (1,5 sn) ekrana yazmak için
+  lcd.clear();      //Ekranı temizler
+  
+  lcd.setCursor(11, 0);  //sağ üst yazının konumu
+  lcd.print("HELLO");   //Ekranda sağ üst satıra yazdırılıcak kelime
+  
+  lcd.setCursor(11, 2);  //sağ alt yazının konumu
+  lcd.print("WORLD");   //Ekranda sağ alt satıra yazdırılcak isim
+  //delay(500);
+  //lcd.clear();
+}",
+     
+"aciklama1" : "LCD Ekranı doğrudan arduino ile besleyebilirsiniz
+Bağlantılarda hata yapmaz iseniz sorunsuz çalışacaktır",
+
+"key" : "arduino"
+
+},
+
+{
+
+"isim":"HCSR04 Kullanımı uzaklık ve alarm devresi",
+"aciklama":"HCSR04 ultrasonik mesafe sensörü kullanarak mesafe ölçümü ve cisim görünce uyarı veren devre yapımı.
+Malzemeler 
+1= HCSR04 Ultrasonik sensör
+2= Buzzer veya led (led kullanılcağı zaman 220 ohm direnç ile kullanınız)
+3= Arduino , jumper kablolar",
+"sema":"https://i.imgyukle.com/2020/04/25/Q0LxYv.png",
+"code" : "#define trigPin 12  //HCSR04 İÇİN
+#define echoPin 11           //pinler tanımlandı
+int a = 2;                  //buzzer veya led için pin tanımlama
+ 
+void setup() { 
+Serial.begin (9600);         //Serial haberleşme başlatıldı
+pinMode(trigPin, OUTPUT);   //trig pini çıkış olarak tanımlandı(gönderme)
+pinMode(echoPin, INPUT);   //echo pini giriş olarak tanımlandı(okuma)
+  pinMode(2 , OUTPUT);    //buzzer pini çıkış olarak tanımlandı
+}
+void loop() {
+long sure, mesafe;
+digitalWrite(trigPin, LOW);    
+delayMicroseconds(2);      
+digitalWrite(trigPin, HIGH); 
+delayMicroseconds(10);           //Trig ve echo pinleri sırayla aktif ve pasif edilerek okuma ve gönderme işlemleri yapılır
+digitalWrite(trigPin, LOW);     //buna görede cisim olup olmadığı denetlenir
+sure = pulseIn(echoPin, HIGH);
+mesafe = (sure/2) / 29.1;
+   if (mesafe > 200 || mesafe < 0){  //cisim uzaklığı 200cm den büyük veya 0cm den küçük ise menzil dışı uyarısı verir
+   Serial.println("Menzil Disi");   //seri monitöre uyarıyı yazdırma 
+     digitalWrite(2 , LOW);    //sensör cisim algılamazsa 2 numaralı pin 0 volta çekilir
+   }
+   else {
+     digitalWrite(2 , HIGH);   //sensör cisim algılarsa 2 numaralı pin aktif olur.(5v)
+   Serial.print(mesafe);      //uzaklığın serial monitöre yazdırılması
+   Serial.println(" cm");    //seri monitöre yazdırma (cm)
+   }
+delay(500);
+}",
+     
+"aciklama1" : "Cisim algılandığı zaman uyarı vermesi için buzzer (hopörler) kullanılmıştır isteğinize göre buzzer yerine led ekleyebilirsiniz dikkat etmeniz gereken tek husus araya direnç eklemeniz gerekir.",
+
+"key" : "arduino"
+
+},
+
+{
+
+"isim":"LDR ile karanlıkta çalışan devre",
+"aciklama":"LDR kullanarak karanlık olduğu zaman yanan led devresi
+Malzemeler 
+1= LDR direnç
+2= arduino , jumper kablolar
+3= mantar led , 220 ohm direnç",
+"sema":"https://i.imgyukle.com/2020/04/25/Q0XZr6.png",
+"code" : "int ledPin = 8;    //Led için pin tanımlandı
+int LDRPin = A5;  //ldr için pin tanımlandı
+void setup()
+{ 
+  pinMode(ledPin, OUTPUT);   //LED pini çıkış olarak tanımlandı
+  Serial.begin(9600);       //Seri haberleşme başlatıldı
+}
+ 
+void loop()
+{
+ int isik_degeri = analogRead(LDRPin);  //ışık_degeri değişkenine ldr den okunan değer aktarıldı.
+Serial.println(isik_degeri);           //ışık değeri ekrana yazdırıldı.
+delay(100);                           //değerlerin arka arkaya yazılma süresi. 
+ if(isik_degeri<200)                 //okunan ışık değeri 200 den küçük ise
+ {
+   digitalWrite(ledPin, HIGH);     //ledin bağlı olduğu pini 5V volta çek (ledi yak)
+ }
+ else               //okunan ışık değeri 200 den büyük ise
+ {
+   digitalWrite(ledPin, LOW);   //ledi söndür pini 0V volta çek
+ }
+}",
+     
+"aciklama1" : "Dikkat etmeniz gerek tek şey ldr nin sinyal ucunu aynı zamanda gnd ye bağlamak yoksa devre çalışmicaktır",
+
+"key" : "arduino"
+
+},
+
+{
+"isim":"2 adet pır sensörü ile servo yön kontrolü",
+"aciklama":"2Adet pır sensörden hangisi cisim algılar ise servo o yöne döner (nişan alma sistemi)",
+"sema":"https://i.imgyukle.com/2020/04/25/Q0caRe.png",
+"code" : "code",
+     
+"aciklama1" : "Mehmet’in manav alışverişinin kodları nasıl olmalıdır?",
+
+"key" : "arduino"
+}
+	
+{
 "isim":"Pic Programlama Ders 1",
 "aciklama":"Mehmet manava gidiyor. Manavda sadece muz, elma ve üzüm var. Manav, Mehmet’e hangi meyveden istediğini sorar.",
 "sema":"https://st1.myideasoft.com/idea/ct/82/myassets/blogs/python-ne-icin-kullanilir.jpg",
@@ -269,7 +443,6 @@ void loop(){
 "aciklama1" : "Mehmet’in manav alışverişinin kodları nasıl olmalıdır?",
 
 "key" : "pic"
-
 },
 
 
