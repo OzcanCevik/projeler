@@ -1,36 +1,64 @@
 [
-
-{
-"isim":"1. proje",
-"aciklama":"Mehmet manava gidiyor. Manavda sadece muz, elma ve üzüm var. Manav, Mehmet’e hangi meyveden istediğini sorar.",
-"sema":"https://st1.myideasoft.com/idea/ct/82/myassets/blogs/python-ne-icin-kullanilir.jpg",
-"code" : "if meyve ==('uz'):",
-     
-"aciklama1" : "Mehmet’in manav alışverişinin kodları nasıl olmalıdır?",
-
-"key" : "arduino"
-
-},
 	
-{"isim":"RÖLE",
+{"isim":"0-9 Arası sayıcı devresi",
 "aciklama":"Bu Bir Sensor Uygulaması",
 "sema":"https://robu.in/wp-content/uploads/2017/06/3-2.jpg",
 "code" : "(void serialEvent() {})",
 "aciklama1" : "Açıklama 2",
 "key" : "arduino"},
 	
+{"isim":"İleri geri servo kontrolü",
+"aciklama":"Bu Bir Sensor Uygulaması",
+"sema":"https://i.imgyukle.com/2020/04/24/QwOUZ1.png",
+"code" : "(void serialEvent() {})",
+"aciklama1" : "Açıklama 2",
+"key" : "arduino"},
+	
+{"isim":"Serial monitör ile led kontrolü",
+"aciklama":"Bu Bir Sensor Uygulaması",
+"sema":"https://i.imgyukle.com/2020/04/24/Qwso7n.png",
+"code" : "(void serialEvent() {})",
+"aciklama1" : "Açıklama 2",
+"key" : "arduino"},
+	
+
 	
 	
-{
-"isim":"Pic Programlama Ders 1",
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+{"isim":"Pic Programlama Ders 1",
 "aciklama":"Mehmet manava gidiyor. Manavda sadece muz, elma ve üzüm var. Manav, Mehmet’e hangi meyveden istediğini sorar.",
 "sema":"https://st1.myideasoft.com/idea/ct/82/myassets/blogs/python-ne-icin-kullanilir.jpg",
 "code" : "code",
      
 "aciklama1" : "Mehmet’in manav alışverişinin kodları nasıl olmalıdır?",
 
-"key" : "pic"
-},
+"key" : "pic"},
 
 
 
@@ -38,18 +66,14 @@
 
 
 
-{
-
-"isim":"SMD 32 DERS",
+{"isim":"SMD 32 DERS",
 "aciklama":"Mehmet manava gidiyor. Manavda sadece muz, elma ve üzüm var. Manav, Mehmet’e hangi meyveden istediğini sorar.",
 "sema":"https://st1.myideasoft.com/idea/ct/82/myassets/blogs/python-ne-icin-kullanilir.jpg",
 "code" : "if meyve ==('uz'):",
      
 "aciklama1" : "Mehmet’in manav alışverişinin kodları nasıl olmalıdır?",
 
-"key" : "smd32"
-
-},
+"key" : "smd32"},
 
 
 
@@ -57,17 +81,13 @@
 
 
 
-{
-
-"isim":"Raspery",
+{"isim":"Raspery",
 "aciklama":"Mehmet manava gidiyor. Manavda sadece muz, elma ve üzüm var. Manav, Mehmet’e hangi meyveden istediğini sorar.",
 "sema":"https://st1.myideasoft.com/idea/ct/82/myassets/blogs/python-ne-icin-kullanilir.jpg",
 "code" : "if meyve ==('uz'):",
      
 "aciklama1" : "Mehmet’in manav alışverişinin kodları nasıl olmalıdır?",
 
-"key" : "raspery"
-
-}
+"key" : "raspery"}
 
 ]
