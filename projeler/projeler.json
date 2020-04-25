@@ -2,7 +2,7 @@
 	
 {"isim":"0-9 Arası sayıcı devresi",
 "aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://robu.in/wp-content/uploads/2017/06/3-2.jpg",
+"sema":"https://i.imgyukle.com/2020/04/25/QdXRvq.png",
 "code" : "(void serialEvent() {})",
 "aciklama1" : "Açıklama 2",
 "key" : "arduino"},
@@ -64,13 +64,130 @@
 "key" : "arduino"},
 	
 {"isim":"Arduino ile polis çakar lambası yapımı",
-"aciklama":"Bu Bir Sensor Uygulaması",
+"aciklama":"Ses eşliğinde butona basınca çalışan çakar devresi
+ Malzemeler = Arduino,2adet mantar led,1 adet buton,3adet 220 ohm direnç,jumper kablolar",
 "sema":"https://i.imgyukle.com/2020/04/25/QdRNl6.png",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
+"code" : "int butondurum;    //Buton durumunu saklayan değişken
+int pushButon =5; //butonun bağlı olduğu pin
+
+void setup() {         
+ 
+  pinMode(2 , OUTPUT);    //Kırmızı led çıkış olarak tanımlandı
+  pinMode(3 , OUTPUT);   //Mavi led çıkış olarak tnımlandı
+  pinMode(4 , OUTPUT);  //Buzzer çıkış olarak tanımlandı
+  pinMode(pushButon , INPUT); //Buton giriş olarak tanımlandı
+  
+}
+void loop() {
+  butondurum = digitalRead(pushButon);  //butondan okunan değer butondurum değişkenine kaydedildi
+  if (butondurum == HIGH)               //Buton değeri lojik 1 (5v) ise
+  {
+  digitalWrite(4 , HIGH);
+  digitalWrite(2, HIGH);    // Led yanık
+  delay(50);
+  digitalWrite(2,LOW);      // Led sönük
+  delay(50);
+  digitalWrite(2,HIGH);     // Led yanık
+  delay(50);
+  digitalWrite(2,LOW);      // Led sönük
+  delay(50);                                     //Bu parametreleri çalıştır
+  digitalWrite(3,HIGH);      // Led yanık
+  delay(50);
+  digitalWrite(3, LOW);      // Led sönük
+  delay(50);
+  digitalWrite(3,HIGH);      // Led yanık
+  delay(50);
+  digitalWrite(3,LOW);       // Led sönük
+  digitalWrite(4 , LOW);
+  delay(50);
+  }
+  else                         //Buton pasif durumda da ise
+  {
+  digitalWrite(2 , LOW);      //Burayı çalıştır
+  digitalWrite(3 , LOW);          
+  }  } 
+",
+"aciklama1" : "Devreyi kurarken dikkat etmeniz gerekenler
+1= Butondan çıkan pembe renkli sinyal kablosunu arduinonun gnd sine direnç ile bağlamak ve dijital pine götürmek aksi takdirde devre çalışmicaktır ",
 "key" : "arduino"},
 	
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
