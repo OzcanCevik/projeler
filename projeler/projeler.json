@@ -65,7 +65,7 @@
 	
 {"isim":"Arduino ile polis çakar lambası yapımı",
 "aciklama":"Ses eşliğinde butona basınca çalışan çakar devresi
- Malzemeler = Arduino,2adet mantar led,1 adet buton,3adet 220 ohm direnç,jumper kablolar",
+ Malzemeler = Arduino,  2adet mantar led,  1 adet buton,  3adet 220 ohm direnç, jumper kablolar",
 "sema":"https://i.imgyukle.com/2020/04/25/QdRNl6.png",
 "code" : "int butondurum;    //Buton durumunu saklayan değişken
 int pushButon =5; //butonun bağlı olduğu pin
