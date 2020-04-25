@@ -152,7 +152,7 @@ if ( (butondurumu == LOW) && (deger == 5) )
     delay(10);*/
 }  }
 ",
-"aciklama1" : "Kod içerisinde bulunan 1.2.3. kez basılınca yapılcaklar ksımından ledlerin durumlarını isteğinize göre ayarlayabilirsiniz",
+"aciklama1" : "Kod içerisinde bulunan 1. 2. 3. kez basılınca yapılcaklar ksımından ledlerin durumlarını isteğinize göre ayarlayabilirsiniz",
 "key" : "arduino"},
 	
 	
