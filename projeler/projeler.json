@@ -49,7 +49,7 @@ lcd.begin(16, 2);
 void loop() 
 {
   lcd.setCursor(0, 0);    //yazının ekrandaki konumu  (sol üst)
-  lcd.print("Blue");     //sol üst tarafa yazılıcak olan kelime
+  //lcd.print("Blue");     //sol üst tarafa yazılıcak olan kelime
   lcd.setCursor(0, 1);  //yazının ekrandaki konumu  (sol alt)
   lcd.print("Eyes");   //sol alt kısıma yazılıcak olan kelime
   delay(1500);        // bekleme süresi
@@ -57,9 +57,9 @@ void loop()
   
   
   lcd.setCursor(11, 0);
-  lcd.print("1.kelime");   //sağ üste yazılıcak kelime
+  lcd.print("Hello");   //sağ üste yazılıcak kelime
   lcd.setCursor(11, 2);
-  lcd.print("WORLD");   //sağ alta yazılıcak kelime
+  lcd.print("World");   //sağ alta yazılıcak kelime
   //delay(500);
   //lcd.clear(); }  //ekranı temizler
 ",
