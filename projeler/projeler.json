@@ -57,7 +57,7 @@ void loop()
   
   
   lcd.setCursor(11, 0);
-  lcd.print("HELLO");   //sağ üste yazılıcak kelime
+  lcd.print("1.kelime");   //sağ üste yazılıcak kelime
   lcd.setCursor(11, 2);
   lcd.print("WORLD");   //sağ alta yazılıcak kelime
   //delay(500);
