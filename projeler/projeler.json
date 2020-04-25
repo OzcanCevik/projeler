@@ -36,7 +36,8 @@
 "aciklama":"LCD Ekran kullanılarak istenilen kelimenin ekrana yazılması
  Malzemeler 1, LCD EKRAN  2, 220ohm direnç 3, BreadBoard , arduino , jumper kablolar",
 "sema":"https://i.imgyukle.com/2020/04/25/QdnxDY.png",
-"code" : "#include <LiquidCrystal.h>   //gerekli olan kütüphane
+"code" : "// (
+ #include <LiquidCrystal.h>   //gerekli olan kütüphane
 
 const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;  //pin tanımlamları
 
@@ -61,7 +62,7 @@ void loop()
   lcd.setCursor(11, 2);
   lcd.print("World");   //sağ alta yazılıcak kelime
   //delay(500);
-  //lcd.clear(); }  //ekranı temizler
+  //lcd.clear(); }  //ekranı temizler //)
 ",
 "aciklama1" : "NOT/Gerekli olan kütüphaneyi eklemez iseniz devre çalışmicaktır",
 "key" : "arduino"},
@@ -79,7 +80,8 @@ void loop()
 "aciklama":"Ultrasonik mesafe sensörü kullanarak hem uzaklık ölçümü hemde cisim algılayınca uyarı veren devre
  Malzemeler 1, HCSR04  2, buzzer veya led  3, jumper kablolar ve arduino",
 "sema":"https://i.imgyukle.com/2020/04/25/Q0LxYv.png",
-"code" : "#define trigPin 12   //HCSR04 İÇİN
+"code" : "//(
+	#define trigPin 12   //HCSR04 İÇİN
 #define echoPin 11  //pinler tanımlandı
 int a = 2;         //buzzer için pin tanımlama
  
@@ -107,7 +109,9 @@ mesafe = (sure/2) / 29.1;
    Serial.print(mesafe);      //uzaklığın serial monitöre yazdırılması
    Serial.println(" cm");    //seri monitöre yazdırma (cm)
    }
-delay(500);}  //bekleme süresi
+delay(500);}  //bekleme süresi 
+	// )
+	
 ",
 "aciklama1" : "Devrede uyarma görevi için buzzer yerine led veya farklı bir komponent kullanabilirsiniz.
 (led bağlicanız zaman direnç eklemeyi unutmayın)",
@@ -129,7 +133,8 @@ delay(500);}  //bekleme süresi
 "aciklama":"LDR Yani ortam etkili direnç kullanılarak karanlık olduğunda yanan lamba modeli
  Malzemeler  1,LDR 2,led 3, 220 ohm direnç 2 adet , Arduino ve jumper kablolar",
 "sema":"https://i.imgyukle.com/2020/04/25/Q0XZr6.png",
-"code" : "int ledPin = 8;    //Led için pin tanımlandı
+"code" : " //(
+	int ledPin = 8;    //Led için pin tanımlandı
 int LDRPin = A5;  //ldr için pin tanımlandı
 void setup()
 { 
@@ -149,7 +154,7 @@ delay(100);                           //değerlerin arka arkaya yazılma süresi
  else               //okunan ışık değeri 200 den büyük ise
  {
    digitalWrite(ledPin, LOW);   //ledi söndür çıkışı  0V volta çek
- } }   //yorum satırı
+ } }   //yorum satırı //)
 ",
 "aciklama1" : "ldr nin çıkışını direnç kullanarak gnd ye bağlamayı unutmayınız devre sorunsuz çalışacaktır. 
 Bağlantıları yaparken led kutuplarına dikkat ediniz",
@@ -172,7 +177,8 @@ Bağlantıları yaparken led kutuplarına dikkat ediniz",
 "aciklama":"Bir adet pushbuton kullanılarak istenen sayıdaki ledin kontrolü
  Malzemeler 1, 2 adet led  2, 3 adet 330ohm direnç  3,pushbuton,kablolar ve arduino",
 "sema":"https://i.hizliresim.com/SrO5Rt.png",
-"code" : "const int buton = 0;   //buton pini
+"code" : " //(
+	const int buton = 0;   //buton pini
 const int led1 = 2;   //led pini
 const int led3 = 5;  //led pini
 
@@ -261,7 +267,7 @@ if ( (butondurumu == LOW) && (deger == 5) )
     digitalWrite();
     deger=6;
     delay(10);*/
-}  }
+}  }  //)
 ",
 "aciklama1" : "Kod içerisinde bulunan 1. 2. 3. kez basılınca yapılcaklar ksımından ledlerin durumlarını isteğinize göre ayarlayabilirsiniz",
 "key" : "arduino"},
@@ -281,7 +287,8 @@ if ( (butondurumu == LOW) && (deger == 5) )
 "aciklama":"IR Alıcı verici Kullanarak ledlerin uzaktan kumanda ile kontrolü
  Malzemeler = 1.IR Sensörü , 2.IR kumanda 3. 330 ohm direnç 4.9 adet mantar led",
 "sema":"https://i.imgyukle.com/2020/04/25/QAtsGS.png",
-"code" : "#include <IRremote.h>    //Devrenin çalışması için gerekli olan kütüphane
+"code" : "//(
+	#include <IRremote.h>    //Devrenin çalışması için gerekli olan kütüphane
 int RECV_PIN = 11;       //alıcnın bağlı olduğu pin
 IRrecv irrecv(RECV_PIN); 
 decode_results results;  
@@ -360,7 +367,7 @@ void loop() {
     
     irrecv.resume();         //Recoiver için bir sonraki değeri al
   }
-  delay(100);}  //bekleme süresi
+  delay(100);}  //bekleme süresi //)
 ",
 "aciklama1" : "Devrede bulunan ledlerin anot uçlarına birer adet direnç bağlayıp arduinoda dijital pinlere bağlayınız geri kalan katot(eksi)uçlarını gnd hattına 1 direnç üzerinden bağlayınız",
 "key" : "arduino"},
@@ -381,7 +388,8 @@ void loop() {
 "aciklama":"Ses eşliğinde butona basınca çalışan çakar devresi
  Malzemeler = Arduino,  2adet mantar led,  1 adet buton,  3adet 220 ohm direnç, jumper kablolar",
 "sema":"https://i.imgyukle.com/2020/04/25/QdRNl6.png",
-"code" : "int butondurum;    //Buton durumunu saklayan değişken
+"code" : " //(
+	int butondurum;    //Buton durumunu saklayan değişken
 int pushButon =5; //butonun bağlı olduğu pin
 
 void setup() {         
@@ -419,7 +427,7 @@ void loop() {
   {
   digitalWrite(2 , LOW);      //Burayı çalıştır
   digitalWrite(3 , LOW);          
-  }  } 
+  }  }  //)
 ",
 "aciklama1" : "Devreyi kurarken dikkat etmeniz gerekenler
 1= Butondan çıkan pembe renkli sinyal kablosunu arduinonun gnd sine direnç ile bağlamak ve dijital pine götürmek aksi takdirde devre çalışmicaktır ",
