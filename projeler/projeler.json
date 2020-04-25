@@ -3,7 +3,7 @@
 {
 
 "isim":"0-9 ARASI SAYICI",
-"aciklama":"Sayıcı devreleri, giriş darbelerine bağlı olarak belirli bir durum dizisini tekrarlayan lojik devrelerdir"
+"aciklama":"Sayıcı devreleri, giriş darbelerine bağlı olarak belirli bir durum dizisini tekrarlayan lojik devrelerdir
 Bu devrede 0-9 arası sayılar belirli bir süre aralığında sırayla yazdırılmaktadır.
 Kullanılan malzemeler  
 1= Arduino uno
