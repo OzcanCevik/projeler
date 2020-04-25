@@ -49,19 +49,216 @@
 "aciklama1" : "Açıklama 2",
 "key" : "arduino"},
 	
+	
+	
+	
+	
+	
+	
+
+	
 {"isim":"Tek buton ile birden fazla led kontrolü",
-"aciklama":"Bu Bir Sensor Uygulaması",
+"aciklama":"Bir adet pushbuton kullanılarak istenen sayıdaki ledin kontrolü
+ Malzemeler 1, 2 adet led  2, 3 adet 330ohm direnç  3,pushbuton,kablolar ve arduino",
 "sema":"https://i.hizliresim.com/SrO5Rt.png",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
+"code" : "const int buton = 0;   //buton pini
+const int led1 = 2;   //led pini
+const int led3 = 5;  //led pini
+
+int butondurumu = 0;   //butondurumu saklicak değişken
+int deger = 0;
+void setup()
+{
+
+//Pinlerin giriş – çıkış tanımlaması yapılıyor
+pinMode(buton, INPUT);
+pinMode(led1, OUTPUT);
+pinMode(led3, OUTPUT);
+
+}
+
+void loop()
+{
+//buton değeri buton durumu değişkenine yazılıyor
+butondurumu = digitalRead(buton);
+
+//Butona basıldı ve deger değişkeni 0 ise
+if ( (butondurumu == HIGH) && (deger == 0) )
+
+{
+// 1. kez basılınca yapılacaklar yazılabilir.
+
+digitalWrite(led1, HIGH);
+digitalWrite(led3, HIGH);
+deger=1;
+delay(10);
+}
+
+//Buton bırakıldı ve deger değişkeni 1 ise
+if ( (butondurumu == LOW) && (deger == 1) )
+
+{
+
+// 1. kez basıp bırakınca yapılacaklar yazılabilir.
+
+deger=2;
+delay(10);
+}
+
+//Butona basıldı ve deger değişkeni 2 ise
+if ( (butondurumu == HIGH) && (deger == 2) )
+
+{
+// 2. kez basılınca yapılacaklar yazılabilir.
+
+digitalWrite(led1, LOW);
+digitalWrite(led3, HIGH);
+deger=3;
+delay(10);
+}
+
+//Buton bırakıldı ve deger değişkeni 3 ise
+if ( (butondurumu == LOW) && (deger == 3) )
+
+{
+
+// 2. kez basıp bırakınca yapılacaklar yazılabilir.
+
+deger=4;
+delay(10);
+}
+
+//Butona basıldı ve deger değişkeni 4 ise
+if ( (butondurumu == HIGH) && (deger == 4) )
+
+{
+// 3. kez basılınca yapılacaklar yazılabilir.
+
+digitalWrite(led1, LOW);
+digitalWrite(led3, LOW);
+deger=5;
+delay(10);
+}
+
+//Buton bırakıldı ve deger değişkeni 5 ise
+if ( (butondurumu == LOW) && (deger == 5) )
+
+{
+
+// 3. kez basıp bırakınca yapılacaklar yazılabilir.
+    /*digitalWrite();
+    digitalWrite();
+    deger=6;
+    delay(10);*/
+}  }
+",
+"aciklama1" : "Kod içerisinde bulunan 1.2.3. kez basılınca yapılcaklar ksımından ledlerin durumlarını isteğinize göre ayarlayabilirsiniz",
 "key" : "arduino"},
 	
+	
+	
+	
+	
+	
+	
+	
+
+	
 {"isim":"Arduino ile IR ALICI VERİCİ kullanımı",
-"aciklama":"Bu Bir Sensor Uygulaması",
+"aciklama":"IR Alıcı verici Kullanarak ledlerin uzaktan kumanda ile kontrolü
+ Malzemeler = 1.IR Sensörü , 2.IR kumanda 3. 330 ohm direnç 4.9 adet mantar led",
 "sema":"https://i.imgyukle.com/2020/04/25/QAtsGS.png",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
+"code" : "#include <IRremote.h>    //Devrenin çalışması için gerekli olan kütüphane
+int RECV_PIN = 11;       //alıcnın bağlı olduğu pin
+IRrecv irrecv(RECV_PIN); 
+decode_results results;  
+void setup()
+{
+  int i;
+  for(i=0;i<10;i++)    //9 kere tekrarlıcak bir döngü oluşturuldu 1 ve 9 arası sayılar için
+  {
+    pinMode(i,OUTPUT);
+  }
+  Serial.begin(9600);    //Seri monitörü başlat
+  irrecv.enableIRIn();  //IR yi etkinleştir
+}
+
+void loop() {
+  
+  if (irrecv.decode(&results)) 
+  {
+    Serial.println(results.value,HEX);  //Seri monitöre uzaktan kumandanın değerini yazdır 
+  
+    if (results.value==0XFD08F7)  //Kumandadan gelen değer(0XFD08F7) değişken ile eşleşirse
+    {
+      digitalWrite(0,HIGH);
+      delay(250);                //Bu kısım çalışır
+      digitalWrite(0,LOW);
+    }
+    else if (results.value==0XFD8877)  //0XFD8877 = 2, Kumandadan 2 tuşuna bastınız zaman 2 numralı pin aktif olur
+    {
+      digitalWrite(2,HIGH);
+      delay(250);
+      digitalWrite(2,LOW);
+    }
+    else if (results.value==0XFD48B7)  //3 değeri için 
+    {
+      digitalWrite(3,HIGH);
+      delay(250);
+      digitalWrite(3,LOW);
+    }
+    else if (results.value==0XFD28D7) //4 değeri içinn
+    {
+      digitalWrite(4,HIGH);
+      delay(250);
+      digitalWrite(4,LOW);
+    }
+    else if (results.value==0XFDA857)  //5 değeri için
+    {
+      digitalWrite(5,HIGH);
+      delay(250);
+      digitalWrite(5,LOW);
+    }
+    else if (results.value==0XFD6897)  //6 değeri için
+    {
+      digitalWrite(6,HIGH);
+      delay(250);
+      digitalWrite(6,LOW);
+    }
+    else if (results.value==0XFD18E7)  //7değeri için
+    {
+      digitalWrite(7,HIGH);
+      delay(250);
+      digitalWrite(7,LOW);
+    }
+    else if (results.value==0XFD9867)  //8 değeri için
+    {
+      digitalWrite(8,HIGH);
+      delay(250);
+      digitalWrite(8,LOW);
+    }
+    else if (results.value==0XFD58A7)   //9 değeri için
+    {
+      digitalWrite(9,HIGH);
+      delay(250);
+      digitalWrite(9,LOW);
+    }
+    
+    
+    irrecv.resume();         //Recoiver için bir sonraki değeri al
+  }
+  delay(100);}  //bekleme süresi
+",
+"aciklama1" : "Devrede bulunan ledlerin anot uçlarına birer adet direnç bağlayıp arduinoda dijital pinlere bağlayınız geri kalan katot(eksi)uçlarını gnd hattına 1 direnç üzerinden bağlayınız",
 "key" : "arduino"},
+	
+	
+	
+	
+	
+	
+	
+	
 	
 {"isim":"Arduino ile polis çakar lambası yapımı",
 "aciklama":"Ses eşliğinde butona basınca çalışan çakar devresi
