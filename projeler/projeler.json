@@ -133,7 +133,7 @@ void RakamGoster(int rakam){   //Değişken içerisindeki , i değeri neyse o ca
 
 "key" : "arduino"
 
-},
+}",
 	
 {
 
