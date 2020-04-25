@@ -110,7 +110,7 @@ mesafe = (sure/2) / 29.1;
    Serial.println(" cm");    //seri monitöre yazdırma (cm)
    }
 delay(500);}
-	",
+",
 "aciklama1" : "Devrede uyarma görevi için buzzer yerine led veya farklı bir komponent kullanabilirsiniz (led bağlicanız zaman direnç eklemeyi unutmayın)",
 "key" : "arduino"},
 	
