@@ -21,7 +21,51 @@
 "aciklama1" : "Açıklama 2",
 "key" : "arduino"},
 	
+{"isim":"Potansiyometre ile servo kontrolü",
+"aciklama":"Bu Bir Sensor Uygulaması",
+"sema":"https://i.imgyukle.com/2020/04/25/Q0uTHR.png",
+"code" : "(void serialEvent() {})",
+"aciklama1" : "Açıklama 2",
+"key" : "arduino"},
+	
+{"isim":"LCD ekran kullanımı",
+"aciklama":"Bu Bir Sensor Uygulaması",
+"sema":"https://i.imgyukle.com/2020/04/25/Q0Tu4N.png",
+"code" : "(void serialEvent() {})",
+"aciklama1" : "Açıklama 2",
+"key" : "arduino"},
+	
+{"isim":"HCSR04 Kullanımı uzaklık ve alarm devresi",
+"aciklama":"Bu Bir Sensor Uygulaması",
+"sema":"https://i.imgyukle.com/2020/04/25/Q0LxYv.png",
+"code" : "(void serialEvent() {})",
+"aciklama1" : "Açıklama 2",
+"key" : "arduino"},
+	
+{"isim":"LDR ile karanlıkta çalışan devre",
+"aciklama":"Bu Bir Sensor Uygulaması",
+"sema":"https://i.imgyukle.com/2020/04/25/Q0XZr6.png",
+"code" : "(void serialEvent() {})",
+"aciklama1" : "Açıklama 2",
+"key" : "arduino"},
+	
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
