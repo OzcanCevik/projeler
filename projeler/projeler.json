@@ -1,4 +1,18 @@
 [
+
+{
+"isim":"1. proje",
+"aciklama":"Mehmet manava gidiyor. Manavda sadece muz, elma ve üzüm var. Manav, Mehmet’e hangi meyveden istediğini sorar.",
+"sema":"https://st1.myideasoft.com/idea/ct/82/myassets/blogs/python-ne-icin-kullanilir.jpg",
+"code" : "if meyve ==('uz'):",
+     
+"aciklama1" : "Mehmet’in manav alışverişinin kodları nasıl olmalıdır?",
+
+"key" : "arduino"
+
+},
+	
+	
 	
 {
 "isim":"Pic Programlama Ders 1",
