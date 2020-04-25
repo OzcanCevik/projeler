@@ -33,7 +33,7 @@
 	
 	
 {"isim":"LCD ekran kullanımı",
-"aciklama":"LCD Ekran kullanılarak istenilen kelimenin cümlenin ekrana yazılması
+"aciklama":"LCD Ekran kullanılarak istenilen kelimenin ekrana yazılması
  Malzemeler 1, LCD EKRAN  2, 220ohm direnç 3, BreadBoard , arduino , jumper kablolar",
 "sema":"https://i.imgyukle.com/2020/04/25/QdnxDY.png",
 "code" : "#include <LiquidCrystal.h>   //gerekli olan kütüphane
@@ -41,8 +41,6 @@
 const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;  //pin tanımlamları
 
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);      // pin tanımlamaları
-
-
 
 void setup() 
 {
@@ -63,7 +61,7 @@ void loop()
   lcd.setCursor(11, 2);
   lcd.print("WORLD");   //sağ alta yazılıcak kelime
   //delay(500);
-  //lcd.clear();  }
+  //lcd.clear(); }  //ekranı temizler
 ",
 "aciklama1" : "NOT/Gerekli olan kütüphaneyi eklemez iseniz devre çalışmicaktır",
 "key" : "arduino"},
@@ -109,9 +107,10 @@ mesafe = (sure/2) / 29.1;
    Serial.print(mesafe);      //uzaklığın serial monitöre yazdırılması
    Serial.println(" cm");    //seri monitöre yazdırma (cm)
    }
-delay(500);}
+delay(500);}  //bekleme süresi
 ",
-"aciklama1" : "Devrede uyarma görevi için buzzer yerine led veya farklı bir komponent kullanabilirsiniz (led bağlicanız zaman direnç eklemeyi unutmayın)",
+"aciklama1" : "Devrede uyarma görevi için buzzer yerine led veya farklı bir komponent kullanabilirsiniz.
+(led bağlicanız zaman direnç eklemeyi unutmayın)",
 "key" : "arduino"},
 	
 	
@@ -150,9 +149,10 @@ delay(100);                           //değerlerin arka arkaya yazılma süresi
  else               //okunan ışık değeri 200 den büyük ise
  {
    digitalWrite(ledPin, LOW);   //ledi söndür çıkışı  0V volta çek
- } }
+ } }   //yorum satırı
 ",
-"aciklama1" : "ldr nin çıkışını direnç kullanarak gnd ye bağlamayı unutmayınız devre sorunsuz çalışacaktır. Bağlantıları yaparken led kutuplarına dikkat ediniz",
+"aciklama1" : "ldr nin çıkışını direnç kullanarak gnd ye bağlamayı unutmayınız devre sorunsuz çalışacaktır. 
+Bağlantıları yaparken led kutuplarına dikkat ediniz",
 "key" : "arduino"},
 	
 	
