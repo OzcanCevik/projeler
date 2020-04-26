@@ -21,10 +21,26 @@
 "aciklama1" : "Açıklama 2",
 "key" : "arduino"},
 	
+	
+	
 {"isim":"Potansiyometre ile servo kontrolü",
 "aciklama":"Bu Bir Sensor Uygulaması",
 "sema":"https://i.imgyukle.com/2020/04/25/Q0uTHR.png",
-"code" : "(void serialEvent() {})",
+"code" : "
+ #include <Servo.h>   //Kütüphane eklendi
+Servo myservo;     // Servoyu kontrol etmek için servo nesnesi oluşturuldu
+int potpin = A5;  //Potansiyometrenin bağlı olduğu pin
+int val;         //analog değer okumak ve kaydetmek için değişken
+void setup() {
+  myservo.attach(2);  //Servonun bağlı olduğu pin numarası
+}
+void loop() {
+  val = analogRead(potpin);             //A5 pininden okunan değer val değişkenine atılır
+  val = map(val, 0, 1023, 0, 180);     //Okunan değer 0-180 aralığına çekilir
+               //0,1023 pottan okunan direnç değeri     
+  myservo.write(val);                   //Servo açı değerini saklamak için değişken
+  delay(15);                           //harkete geçmek için bekleme süresi
+}  ",
 "aciklama1" : "Açıklama 2",
 "key" : "arduino"},
 	
