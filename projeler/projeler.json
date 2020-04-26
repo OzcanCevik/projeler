@@ -15,16 +15,79 @@
 "key" : "arduino"},
 	
 {"isim":"Serial monitör ile led kontrolü",
-"aciklama":"Bu Bir Sensor Uygulaması",
+"aciklama":"Serial monitör den gönderilen sayıya göre aktif led sayısını belirleme",
 "sema":"https://i.imgyukle.com/2020/04/24/Qwso7n.png",
-"code" : "(void serialEvent() {})",
+"code" : "
+ void blink(int LEDPin, int LEDOnTime, int LEDOffTime) // LED yakıp sönme fonksiyonu
+{
+  digitalWrite(LEDPin, HIGH);
+  delay(LEDOnTime);
+  digitalWrite(LEDPin, LOW);
+  delay(LEDOffTime);
+}
+
+void setup(){
+  for(int i=2; i<7; i++){ pinMode(i, OUTPUT);}  //2-7 arasında çalışıcak for döngüsü başlatılır	
+  Serial.begin(9600);    //seri haberleşme başlatılır
+}
+
+void loop(){
+  if (Serial.available()) {
+
+    
+    char ser = Serial.read();   //Serial monitörden okuma yapıyoruz 
+    
+    switch (ser) {        //Seri monitörden okunan değer hangi case numarası ile eşleşirse o case bloğu çalışır.
+      case '1':          //Seri monitörden 1 yazılırsa bu case değeri ile eşleşir ve bu blok çalışır
+      digitalWrite(2 , HIGH);
+      digitalWrite(3 , LOW);
+      digitalWrite(4 , LOW);
+      digitalWrite(5 , LOW);
+      digitalWrite(6 , LOW);
+      delay(500);         //bekleme süresi
+        break;           //case bloğunu sonlandırır.
+        
+      case '2':
+        digitalWrite(2 , HIGH);
+        digitalWrite(3 , HIGH);
+        digitalWrite(4 , LOW);
+        digitalWrite(5 , LOW);
+        digitalWrite(6 , LOW);
+        break;
+        
+      case '3':
+        digitalWrite(2 , HIGH);
+        digitalWrite(3 , HIGH);
+        digitalWrite(4 , HIGH);
+        digitalWrite(5 , LOW);
+        digitalWrite(6 , LOW);
+           
+        break;
+      case '4':
+        digitalWrite(2 , HIGH);
+        digitalWrite(3 , HIGH);
+        digitalWrite(4 , HIGH);
+        digitalWrite(5 , HIGH);
+        digitalWrite(6 , LOW);
+        break;
+      case '5':
+        digitalWrite(2 , HIGH);
+        digitalWrite(3 , HIGH);
+        digitalWrite(4 , HIGH);
+        digitalWrite(5 , HIGH);
+        digitalWrite(6 , HIGH);
+        break;
+    } 
+  }
+}  ",
 "aciklama1" : "Açıklama 2",
 "key" : "arduino"},
 	
+
 	
 	
 {"isim":"Potansiyometre ile servo kontrolü",
-"aciklama":"Bu Bir Sensor Uygulaması",
+"aciklama":"Potansiyometre yani ayarlı direnç kullanılarak Servonun açı değerinin kontrolü  Malzemeler servo MG909G , Arduino , kablolar , değeri farketmeyen potansiyometre",
 "sema":"https://i.imgyukle.com/2020/04/25/Q0uTHR.png",
 "code" : "
  #include <Servo.h>   //Kütüphane eklendi
