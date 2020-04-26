@@ -63,17 +63,27 @@ digitalWrite(trig , LOW);  //trig 2mikro saniye boyunca 0 volta çekildi
 
 
 {"isim":"LDR",
-"aciklama":"Bu Bir Sensor Uygulaması",
+"aciklama":"LDR (Light Dependent Resistor), Türkçede “Işığa Bağımlı Direnç” anlamına gelmektedir. Bir diğer adı da foto dirençtir. LDR’ler bulundukları devrelerde değişen direnç değerleri ile bir çıkış sağlarlar. Üzerine düşen ışık şiddeti ile ters orantılı bir çalışma prensibine sahiptir. Yani üzerine düşen ışık şiddeti arttıkça sahip olduğu direnç değeri azalır, ışık şiddeti azaldıkça sahip olduğu direnç değeri artar.",
 "sema":"https://ozgurseremet.com/wp-content/uploads/2019/08/LDR-foto-Diren%C3%A7.jpg",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
+"code" : "void setup() {
+  Serial.begin(9600); //Serial haberleşme başlatıldı
+}
+void loop()
+{
+  int isik_deger = analogRead(A5); //A5 pini değeri okunarak isik_deger e atıldı
+  Serial.println(isik_deger);   //isik_deger ekrana yazdırıldı
+  delay(50);    //Karanlık olduğunda 6, aydınlıkta 676 değerini verir
+}",
+"aciklama1" : "Devreyi kurarken dikkat etmeniz gerek nokta ldr nin arduino a5 pinine giden ayağına direnç bağlayıp , direncin diyer ucunu gnd ye bağlamanız gerekmektedir yoksa devre çalışmicaktır.",
 "key" : "arduino"},
 
+	
+
 {"isim":"RÖLE",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://robu.in/wp-content/uploads/2017/06/3-2.jpg",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
+"aciklama":"Röle, aynı zamanda izolasyon sağlayan elektromekanik bir komponenttir. Kontrol (geliştirme) kartları ve shiled'ın bağlı olduğu düşük güç tarafıyla, röle modülünün çalıştığı yüksek güç tarafında, röle yoluyla bağlantı koparılmıştır. Bu şekilde yüksek voltaj/akım koruması sağlanmış olur",
+"sema":"https://www.motorobit.com/class/INNOVAEditor/assets/Role%20modulu%20kullan%C4%B1m%C4%B1.fw.png",
+"code" : "",
+"aciklama1" : "Resimde görünen Klemens girişlerinden normalde açık uçlarına ",
 "key" : "arduino"},
 	
 {"isim":"JOYSTİCK",
