@@ -10,12 +10,36 @@
 {"isim":"İleri geri servo kontrolü",
 "aciklama":"Bu Bir Sensor Uygulaması",
 "sema":"https://i.imgyukle.com/2020/04/24/QwOUZ1.png",
-"code" : "(void serialEvent() {})",
+"code" : "
+#include<Servo.h>      //Servonun çalışması için gerekli olan kütüphane 
+Servo servo1;          //Servo nesnesi oluşturuldu
+int aci;              //Açı değerinin tutulacağı değişken
+ 
+void setup() {
+ servo1.attach(2);   //Servonun bağlı olduğu pin numarası (D2)
+}
+ 
+void loop() {
+ 
+for(aci=0;aci<=180;aci+=3){
+      //aci değeri 180 den küçük veya eşit  olduğu sürece ileri yönde dönecek servo her dönmede 3 adım 
+     //büyük olursa ters yönde dönmeye başlar
+servo1.write(aci);
+delay(100);                         //Geri dönüş için bekleme süresi
+}
+for(aci=180;aci>=0;aci-=3){      //Ters yönde dönerken atacağı adım sayısı  (-3 adım her seferde)
+servo1.write(aci);      
+delay(100);     //ileri dönüş için 100ms bekle
+}
+}  ",
 "aciklama1" : "Açıklama 2",
 "key" : "arduino"},
 	
+	
+	
+
 {"isim":"Serial monitör ile led kontrolü",
-"aciklama":"Serial monitör den gönderilen sayıya göre aktif led sayısını belirleme",
+"aciklama":"Serial monitör den gönderilen sayıya göre aktif led sayısını belirleme  Malzemeler , 5adet led , 5 adet 220 ohm direnç , kablolar arduino ve jumper kablolar",
 "sema":"https://i.imgyukle.com/2020/04/24/Qwso7n.png",
 "code" : "
  void blink(int LEDPin, int LEDOnTime, int LEDOffTime) // LED yakıp sönme fonksiyonu
@@ -80,7 +104,7 @@ void loop(){
     } 
   }
 }  ",
-"aciklama1" : "Açıklama 2",
+"aciklama1" : "Devreyi kurduktan sonra Arduino ide üzerinde bulunan serial monitörü açarak devreyi test edebilirsiniz  Dirençleri ledlerin anot artı uçlarına bağlayarak arduino dijital pinlere bağlayınız",
 "key" : "arduino"},
 	
 
