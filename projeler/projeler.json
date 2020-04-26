@@ -1,14 +1,128 @@
 [
 	
 {"isim":"0-9 Arası sayıcı devresi",
-"aciklama":"Bu Bir Sensor Uygulaması",
+"aciklama":"Ortak anotlu(+) 7 segment display kullanılarak ekrana sırasıyla 0-9 arası sayıların yazdırlması",
 "sema":"https://i.imgyukle.com/2020/04/25/QdXRvq.png",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
+"code" : "
+int e=8, d=7, c=6, b=5, a=4, f=3, g=2; //Ledlerin bağlı olduğu pinler.
+void setup()
+{
+  pinMode(a, OUTPUT);
+  pinMode(b, OUTPUT);
+  pinMode(c, OUTPUT);
+  pinMode(d, OUTPUT);   //LED PİNLERİ ÇIKIŞ OLARAK TANIMLANDI
+  pinMode(e, OUTPUT);
+  pinMode(f, OUTPUT);
+  pinMode(g, OUTPUT);
+}
+void loop(){
+  int i;
+  for(i=0; i<10; i++){   //For döngüsünün kaç kere tekrarlanacağı belirtilir. (9 kere)
+    RakamGoster(i);
+    delay(1000);    //Sayırların geçiş süreleri (1 sn)
+  }
+}
+void RakamGoster(int rakam){   //Değişken içerisindeki , i değeri neyse o case bloğu çalışır.
+  switch(rakam){
+    case 0 :   // 0 SAYISINI YAZDIRIR . İ değeri 0 ise ekrana 0 yazılır 
+      digitalWrite(a,LOW);
+      digitalWrite(b,LOW);
+      digitalWrite(c,LOW);
+      digitalWrite(d,LOW);
+      digitalWrite(e,LOW);
+      digitalWrite(f,LOW);
+      digitalWrite(g,HIGH);
+      break;     //Case bloğunu sonlandırır.
+    case 1:     // 1 SAYISINI YAZDIRIR
+      digitalWrite(a,HIGH);
+      digitalWrite(b,LOW);
+      digitalWrite(c,LOW);
+      digitalWrite(d,HIGH);
+      digitalWrite(e,HIGH);
+      digitalWrite(f,HIGH);
+      digitalWrite(g,HIGH);
+      break;
+    case 2:     //2 SAYISINI YAZDIRIR
+      digitalWrite(a,LOW);
+      digitalWrite(b,LOW);
+      digitalWrite(c,HIGH);
+      digitalWrite(d,LOW);
+      digitalWrite(e,LOW);
+      digitalWrite(f,HIGH);
+      digitalWrite(g,LOW);
+      break;
+    case 3:    //3 SAYISINI YAZDIRIR
+      digitalWrite(a,LOW);
+      digitalWrite(b,LOW);
+      digitalWrite(c,LOW);
+      digitalWrite(d,LOW);
+      digitalWrite(e,HIGH);
+      digitalWrite(f,HIGH);
+      digitalWrite(g,LOW);
+      break;
+    case 4:  //4 SAYISINI YAZDIRIR
+      digitalWrite(a,HIGH);
+      digitalWrite(b,LOW);
+      digitalWrite(c,LOW);
+      digitalWrite(d,HIGH);
+      digitalWrite(e,HIGH);
+      digitalWrite(f,LOW);
+      digitalWrite(g,LOW);
+      break;
+    case 5:     //5 SAYISINI YAZDIRIR
+      digitalWrite(a,LOW);
+      digitalWrite(b,HIGH);
+      digitalWrite(c,LOW);
+      digitalWrite(d,LOW);
+      digitalWrite(e,HIGH);
+      digitalWrite(f,LOW);
+      digitalWrite(g,LOW);
+      break;
+    case 6:    //6 SAYISINI YAZDIRIR
+      digitalWrite(a,LOW);
+      digitalWrite(b,HIGH);
+      digitalWrite(c,LOW);
+      digitalWrite(d,LOW);
+      digitalWrite(e,LOW);
+      digitalWrite(f,LOW);
+      digitalWrite(g,LOW);
+      break;
+    case 7:    //7 SAYISINI YAZDIRIR
+      digitalWrite(a,LOW);
+      digitalWrite(b,LOW);
+      digitalWrite(c,LOW);
+      digitalWrite(d,HIGH);
+      digitalWrite(e,HIGH);
+      digitalWrite(f,HIGH);
+      digitalWrite(g,HIGH);
+      break;
+    case 8:    // 8 SAYSINI YAZDIRIR
+      digitalWrite(a,LOW);
+      digitalWrite(b,LOW);
+      digitalWrite(c,LOW);
+      digitalWrite(d,LOW);
+      digitalWrite(e,LOW);
+      digitalWrite(f,LOW);
+      digitalWrite(g,LOW);
+      break;
+    case 9:    //9 SAYISINI YAZDIRIR
+      digitalWrite(a,LOW);
+      digitalWrite(b,LOW);
+      digitalWrite(c,LOW);
+      digitalWrite(d,LOW);
+      digitalWrite(e,HIGH);
+      digitalWrite(f,LOW);
+      digitalWrite(g,LOW);
+      break;
+  }
+}   ",
+"aciklama1" : "NOT/nu devrede ortak anotlu display kullanılmıştır siz ortak katot kullanacak iseniz direncin ucunu gnd(-) ye bağlayıp kod içerisinde bulunan tüm HIGH ları LOW , Low ları HIGH yapmanız gerekmektedir ",
 "key" : "arduino"},
 	
+	
+	
 {"isim":"İleri geri servo kontrolü",
-"aciklama":"Bu Bir Sensor Uygulaması",
+"aciklama":"Servo motor içerisinde pot ve dc motor olan bir bileşendir pot sayesinde motorun konumu belirlenebiliyor ve bu açı değeri şeklinde kontrol edilebiliyor. Malzemeler 1,Servo mg909g , Kablolar , arduino , bord , 5-8v pil adaptör",
 "sema":"https://i.imgyukle.com/2020/04/24/QwOUZ1.png",
 "code" : "
 #include<Servo.h>      //Servonun çalışması için gerekli olan kütüphane 
@@ -32,7 +146,7 @@ servo1.write(aci);
 delay(100);     //ileri dönüş için 100ms bekle
 }
 }  ",
-"aciklama1" : "Açıklama 2",
+"aciklama1" : "servonun içerisinde bulunan pot aracılığı ile servo milinin konumu saptanarak verdimiz komutlar doğrultusunda dönüş yaptırabiliriz. Bu devreyi kurarken dikkat etmeniz gerekenler elektrik motorları fazla akım çekerler buda arduinoya zarar verir bu yüzden harici bir pil ile besleyin servo motoru ",
 "key" : "arduino"},
 	
 	
