@@ -1,10 +1,26 @@
 [
 	
 {"isim":"MZ80",
-"aciklama":"mz80 hareket denetleyicidir",
+"aciklama":"Mz80 Kızılötesi Sensör. Geniş mesafe ölçüm aralığına sahip bir kızılötesi mesafe ölçüm sensörüdür. Cisim algılaması gereken bir çok robot projesinde ve özel projelerde kullanılabilir. Arkasında bulunan trimpot ile ölçüm menzili 3 cm ile 80 cm aralığında ayarlanabilir. Tepki süresi düşük, güçlü sensörlerdir. Çlaışma voltajı=5V , - Kırmızı : +5 V Siyah : Toprak Sarı : Data",
 "sema":"https://www.robomarket.com.tr/Uploads/UrunResimleri/buyuk/mz80-kizilotesi-engel-algilama-sensoru-e-9533.jpg",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
+"code" : "
+ int mz80 = 11;  //MZ80 in bağlı olduğu pin
+int mzdeger = 0; //mz80 değerini saklicak değişken
+void setup() {
+   pinMode(mz80, INPUT); //mz80 pini input olarak ayarlandı
+   Serial.begin(9600);  //Serial haberleşme başlatıldı
+}
+void loop() {
+  mzdeger = digitalRead(mz80);  //11 numaralı pinden okunan değer mzdeger değişkenine atıldı
+  if(mzdeger == 0) {       //mzdeger değişkeni 0 a eşit ise
+    Serial.println(1);    //ekrana 1 yazdır
+    }
+  else{                //1 e eşit ise
+    Serial.println(0);    //ekrana 0 yazdır
+    }
+    delay(500);
+} ",
+"aciklama1" : "MZ80 sinyal kablosunu arduinoda 11. pine bağlayın kırmızı kabloyu 5v pinine siyahı gnd ye bağlayıp serial monitörü açarak test edebilirsiniz. cisim olmadığı zaman 1 çıkışını verir",
 "key" : "arduino"},
 
 {"isim":"HCSR04",
