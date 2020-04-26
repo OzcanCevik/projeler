@@ -29,6 +29,43 @@
 "key" : "arduino"},
 	
 	
+	
+	
+	
+{"isim":"LCD ekran kullanımı",
+"aciklama":"LCD Ekran kullanılarak istenilen kelimenin ekrana yazılması. Malzemeler 1, LCD EKRAN  2, 220ohm direnç 3, BreadBoard , arduino , jumper kablolar",
+"sema":"https://i.imgyukle.com/2020/04/25/QdnxDY.png",
+"code" : "
+ #include <LiquidCrystal.h>   //gerekli olan kütüphane
+
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;  //pin tanımlamları
+
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);      // pin tanımlamaları
+
+void setup() 
+{
+lcd.begin(16, 2);
+}
+void loop() 
+{
+  lcd.setCursor(0, 0);    //yazının ekrandaki konumu  (sol üst)
+  lcd.print("Blue");     //sol üst tarafa yazılıcak olan kelime
+  lcd.setCursor(0, 1);  //yazının ekrandaki konumu  (sol alt)
+  lcd.print("Eyes");   //sol alt kısıma yazılıcak olan kelime
+  delay(1500);        // bekleme süresi
+  lcd.clear();       //ekranı temizler
+  
+  
+  lcd.setCursor(11, 0);
+  lcd.print("Hello");   //sağ üste yazılıcak kelime
+  lcd.setCursor(11, 2);
+  lcd.print("World");   //sağ alta yazılıcak kelime
+  delay(500);
+  lcd.clear(); }  ",
+"aciklama1" : "NOT/Gerekli olan kütüphaneyi eklemez iseniz devre çalışmicaktır",
+"key" : "arduino"},
+	
+	
 
 	
 	
