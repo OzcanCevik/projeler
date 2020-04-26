@@ -29,7 +29,7 @@
 "key" : "arduino"},
 	
 	
-	
+//*****************************************************************************************************************************************	
 	
 {"isim":"Tek buton ile birden fazla led kontrolü",
 "aciklama":"Bir adet pushbuton kullanılarak istenen sayıdaki ledin kontrolü. Malzemeler 1, 2 adet led  2, 3 adet 330ohm direnç  3,pushbuton,kablolar ve arduino",
@@ -160,20 +160,50 @@ delay(100);                           //değerlerin arka arkaya yazılma süresi
 Bağlantıları yaparken led kutuplarına dikkat ediniz",
 "key" : "arduino"},
 	
+	
 //**********************************************************************************************************************	
 
+	
+{"isim":"HCSR04 Kullanımı uzaklık ve alarm devresi",
+"aciklama":"Ultrasonik mesafe sensörü kullanarak hem uzaklık ölçümü hemde cisim algılayınca uyarı veren devre. Malzemeler 1, HCSR04  2, buzzer veya led  3, jumper kablolar ve arduino",
+"sema":"https://i.imgyukle.com/2020/04/25/Q0LxYv.png",
+"code" : " 
+#define trigPin 12   //HCSR04 İÇİN
+#define echoPin 11  //pinler tanımlandı
+int a = 2;         //buzzer için pin tanımlama
+ 
+void setup() { 
+Serial.begin (9600);         //Serial haberleşme başlatıldı
+pinMode(trigPin, OUTPUT);   //trig pini çıkış olarak tanımlandı(gönderme)
+pinMode(echoPin, INPUT);   //echo pini giriş olarak tanımlandı(okuma)
+  pinMode(2 , OUTPUT);    //buzzer pini çıkış olarak tanımlandı
+}
+void loop() {
+long sure, mesafe;
+digitalWrite(trigPin, LOW);    
+delayMicroseconds(2);      
+digitalWrite(trigPin, HIGH); 
+delayMicroseconds(10);          //Trig ve echo pinleri sırayla aktif ve pasif edilerek okuma ve gönderme işlemleri yapılır
+digitalWrite(trigPin, LOW);     //buna görede cisim olup olmadığı denetlenir
+sure = pulseIn(echoPin, HIGH);
+mesafe = (sure/2) / 29.1;
+   if (mesafe > 200 || mesafe < 0){  //cisim uzaklığı 200cm den büyük veya 0cm den küçük ise menzil dışı uyarısı verir
+   Serial.println("Menzil Disi");   //seri monitöre uyarıyı yazdırma 
+     digitalWrite(2 , LOW);    //sensör cisim algılamazsa 2 numaralı pin 0 volta çekilir
+   }
+   else {
+     digitalWrite(2 , HIGH);   //sensör cisim algılarsa 2 numaralı pin aktif olur.(5v)
+   Serial.print(mesafe);      //uzaklığın serial monitöre yazdırılması
+   Serial.println(" cm");    //seri monitöre yazdırma (cm)
+   }
+delay(500);}   ",
+"aciklama1" : "Devrede uyarma görevi için buzzer yerine led veya farklı bir komponent kullanabilirsiniz.(led bağlicanız zaman direnç eklemeyi unutmayın)",
+"key" : "arduino"},
+	
 
-	
-	
-	
-	
-	
-	
-	
-	
+//****************************************************************************************************************************
 	
 
-	
 {"isim":"Arduino ile IR ALICI VERİCİ kullanımı",
 "aciklama":"IR Alıcı verici Kullanarak ledlerin uzaktan kumanda ile kontrolü. Malzemeler = 1.IR Sensörü , 2.IR kumanda 3. 330 ohm direnç 4.9 adet mantar led",
 "sema":"https://i.imgyukle.com/2020/04/25/QAtsGS.png",
