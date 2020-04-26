@@ -23,12 +23,44 @@ void loop() {
 "aciklama1" : "MZ80 sinyal kablosunu arduinoda 11. pine bağlayın kırmızı kabloyu 5v pinine siyahı gnd ye bağlayıp serial monitörü açarak test edebilirsiniz. cisim olmadığı zaman 1 çıkışını verir",
 "key" : "arduino"},
 
+	
+
+
 {"isim":"HCSR04",
-"aciklama":"Hareket Algılayıcı",
+"aciklama":"Sensörün üzerinde gördüğünüz gibi iki kısım vardır.Sensörü kullanmak için Trig pininden 10us (mikrosaniye) ‘ lik pals gönderilir.Sensör kendi içerisinde 40khz frekansında bir sinyal üretir.Bu sinyalin yayılma hızı 340m/s dir.Bu sinyal bir cisme çarparsa yansıyan sinyal sensör tarafından algılanır.Echo pini ise belirli aralıklar lojik-1 ve lojik-0 olur.Şimdi cisim ile sensör arasındaki mesafeyi ölçmek için tek yapılması gereken sinyalin çıkış süresinden geliş süresine kadar geçen zamanda Echo pininin ne kadar lojik-1 olduğunu bulmaktır.",
 "sema":"https://cdn.akakce.com/iv/10022/529/529959587z.jpg",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
+"code" : "
+int trig = 12;    //Trig pini 
+int echo = 11;   //echo pin numarası
+long sure,cm;
+
+void setup() {
+pinMode(trig , OUTPUT);   //trig çıkış olarak tanımlandı
+pinMode(echo , INPUT);   //echo giriş olarak tanımlandı
+  
+ Serial.begin(9600);   //seri haberleşme başlatıldı
+}
+
+void loop()
+{
+digitalWrite(trig , LOW);  //trig 2mikro saniye boyunca 0 volta çekildi
+ delayMicroseconds(2);
+  
+  digitalWrite(trig , HIGH);  //trig pini 10 mikro saniye boyunca 5 volta çekilid
+ delayMicroseconds(10);
+  
+  digitalWrite(trig , LOW);   //trig pini tekrar lowa çekildi
+  sure = pulseIn(echo , HIGH);  //echo pininden okunan değer sure değişkenine atıldı
+  
+  cm = sure/58;   //sure değeri 58 ile bölünerek cm değişkenine atıldı
+  Serial.println(cm);  //cm değişkeni ekrana yazdırıldı
+  delay(100);
+}  ",
+"aciklama1" : "HCSR04 üzerinde bulunan trig=D12  Echo=D11  GND=GND  VCC=VCC arduino pinlerine bağlayarak serial monitörü açarak test edebilirsiniz",
 "key" : "arduino"},
+	
+	
+
 
 {"isim":"LDR",
 "aciklama":"Bu Bir Sensor Uygulaması",
