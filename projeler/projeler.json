@@ -129,7 +129,7 @@ if ( (butondurumu == LOW) && (deger == 5) )
 "key" : "arduino"},
 	
 	
-
+//*********************************************************************************************************************************************
 	
 {"isim":"LDR ile karanlıkta çalışan devre",
 "aciklama":"LDR Yani ortam etkili direnç kullanılarak karanlık olduğunda yanan lamba modeli. Malzemeler  1,LDR 2,led 3, 220 ohm direnç 2 adet , Arduino ve jumper kablolar",
@@ -159,6 +159,10 @@ delay(100);                           //değerlerin arka arkaya yazılma süresi
 "aciklama1" : "ldr nin çıkışını direnç kullanarak gnd ye bağlamayı unutmayınız devre sorunsuz çalışacaktır. 
 Bağlantıları yaparken led kutuplarına dikkat ediniz",
 "key" : "arduino"},
+	
+//**********************************************************************************************************************	
+
+
 	
 	
 	
