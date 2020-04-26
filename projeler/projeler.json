@@ -27,13 +27,13 @@ digitalWrite(trigPin, LOW);     //buna görede cisim olup olmadığı denetlenir
 sure = pulseIn(echoPin, HIGH);
 mesafe = (sure/2) / 29.1;
    if (mesafe > 200 || mesafe < 0){  //cisim uzaklığı 200cm den büyük veya 0cm den küçük ise menzil dışı uyarısı verir
-   Serial.println("Menzil Disi");   //seri monitöre uyarıyı yazdırma 
+   Serial.println(Menzil Disi);   //seri monitöre uyarıyı yazdırma 
      digitalWrite(2 , LOW);    //sensör cisim algılamazsa 2 numaralı pin 0 volta çekilir
    }
    else {
      digitalWrite(2 , HIGH);   //sensör cisim algılarsa 2 numaralı pin aktif olur.(5v)
    Serial.print(mesafe);      //uzaklığın serial monitöre yazdırılması
-   Serial.println("cm");    //seri monitöre yazdırma (cm)
+   Serial.println(cm);    //seri monitöre yazdırma (cm)
    }
 delay(500);}   ",
 "aciklama1" : "Devrede uyarma görevi için buzzer yerine led veya farklı bir komponent kullanabilirsiniz.(led bağlicanız zaman direnç eklemeyi unutmayın)",
