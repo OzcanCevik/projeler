@@ -49,17 +49,17 @@ lcd.begin(16, 2);
 void loop() 
 {
   lcd.setCursor(0, 0);    //yazının ekrandaki konumu  (sol üst)
-  lcd.print(Blue);     //sol üst tarafa yazılıcak olan kelime //kod hata vermesi durumunda kelimeyi çift tırnak içinde yazın
+  lcd.print(Blue);     //sol üst tarafa yazılıcak olan kelime kod hata vermesi durumunda kelimeyi çift tırnak içinde yazın
   lcd.setCursor(0, 1);  //yazının ekrandaki konumu  (sol alt)
-  lcd.print(Eyes);   //sol alt kısıma yazılıcak olan kelime   //kod hata vermesi durumunda kelimeyi çift tırnak içinde yazın
+  lcd.print(Eyes);   //sol alt kısıma yazılıcak olan kelime   kod hata vermesi durumunda kelimeyi çift tırnak içinde yazın
   delay(1500);        // bekleme süresi
   lcd.clear();       //ekranı temizler
   
   
   lcd.setCursor(11, 0);
-  lcd.print(Hello);   //sağ üste yazılıcak kelime   //kod hata vermesi durumunda kelimeyi çift tırnak içinde yazın
+  lcd.print(Hello);   //sağ üste yazılıcak kelime  kod hata vermesi durumunda kelimeyi çift tırnak içinde yazın
   lcd.setCursor(11, 2);
-  lcd.print(World);   //sağ alta yazılıcak kelime  //kod hata vermesi durumunda kelimeyi çift tırnak içinde yazın
+  lcd.print(World);   //sağ alta yazılıcak kelime kod hata vermesi durumunda kelimeyi çift tırnak içinde yazın
   delay(500);
   lcd.clear(); }  ",
 "aciklama1" : "NOT/Gerekli olan kütüphaneyi eklemez iseniz devre çalışmicaktır",
