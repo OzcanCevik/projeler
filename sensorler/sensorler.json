@@ -19,7 +19,7 @@ void loop() {
     Serial.println(0);    //ekrana 0 yazdır
     }
     delay(500);
-} ",
+}  ",
 "aciklama1" : "MZ80 sinyal kablosunu arduinoda 11. pine bağlayın kırmızı kabloyu 5v pinine siyahı gnd ye bağlayıp serial monitörü açarak test edebilirsiniz. cisim olmadığı zaman 1 çıkışını verir",
 "key" : "arduino"},
 
@@ -54,8 +54,7 @@ digitalWrite(trig , LOW);  //trig 2mikro saniye boyunca 0 volta çekildi
   
   cm = sure/58;   //sure değeri 58 ile bölünerek cm değişkenine atıldı
   Serial.println(cm);  //cm değişkeni ekrana yazdırıldı
-  delay(100);
-}  ",
+  delay(100);}   ",
 "aciklama1" : "HCSR04 üzerinde bulunan trig=D12  Echo=D11  GND=GND  VCC=VCC arduino pinlerine bağlayarak serial monitörü açarak test edebilirsiniz",
 "key" : "arduino"},
 	
@@ -63,17 +62,18 @@ digitalWrite(trig , LOW);  //trig 2mikro saniye boyunca 0 volta çekildi
 
 
 {"isim":"LDR",
-"aciklama":"LDR (Light Dependent Resistor), Türkçede “Işığa Bağımlı Direnç” anlamına gelmektedir. Bir diğer adı da foto dirençtir. LDR’ler bulundukları devrelerde değişen direnç değerleri ile bir çıkış sağlarlar. Üzerine düşen ışık şiddeti ile ters orantılı bir çalışma prensibine sahiptir. Yani üzerine düşen ışık şiddeti arttıkça sahip olduğu direnç değeri azalır, ışık şiddeti azaldıkça sahip olduğu direnç değeri artar.",
+"aciklama":"LDR (Light Dependent Resistor) Türkçede “Işığa Bağımlı Dirençanlamına gelmektedir. Bir diğer adı da foto dirençtir. LDR’ler bulundukları devrelerde değişen direnç değerleri ile bir çıkış sağlarlar. Üzerine düşen ışık şiddeti ile ters orantılı bir çalışma prensibine sahiptir. Yani üzerine düşen ışık şiddeti arttıkça sahip olduğu direnç değeri azalır, ışık şiddeti azaldıkça sahip olduğu direnç değeri artar.",
 "sema":"https://ozgurseremet.com/wp-content/uploads/2019/08/LDR-foto-Diren%C3%A7.jpg",
-"code" : "void setup() {
-  Serial.begin(9600); //Serial haberleşme başlatıldı
+"code" : "
+void setup() {
+ Serial.begin(9600); //Serial haberleşme başlatıldı
 }
 void loop()
 {
   int isik_deger = analogRead(A5); //A5 pini değeri okunarak isik_deger e atıldı
   Serial.println(isik_deger);   //isik_deger ekrana yazdırıldı
   delay(50);    //Karanlık olduğunda 6, aydınlıkta 676 değerini verir
-}",
+}   ",
 "aciklama1" : "Devreyi kurarken dikkat etmeniz gerek nokta ldr nin arduino a5 pinine giden ayağına direnç bağlayıp , direncin diyer ucunu gnd ye bağlamanız gerekmektedir yoksa devre çalışmicaktır.",
 "key" : "arduino"},
 
@@ -165,7 +165,7 @@ void loop()
 
 	
 {"isim":"RGB LED MODÜLÜ",
-"aciklama":"Bağlantılar R,G,B pinleri dijital pinlere geri kalan pin ise gnd ye bağlanmalıdır  Direnç olarak 100 veya 220 ohm işinizi görür direnç olmadan çalıştırmayın",
+"aciklama": "Bağlantılar R,G,B pinleri dijital pinlere geri kalan pin ise gnd ye bağlanmalıdır  Direnç olarak 100 veya 220 ohm işinizi görür direnç olmadan çalıştırmayın ",
 "sema":"https://i.imgyukle.com/2020/04/27/rVQQJN.png",
 "code" : "
 int r=3;  
@@ -218,8 +218,7 @@ void loop()
           {
                digitalWrite(led, LOW);
           } */
-     delay(100);
-}   ",
+     delay(100); }   ",
 "aciklama1" : "Kızılötesi sensör herhangi bir cisim algıladığı zaman çıkışına lojik1 yollar. Yorum satırı yapılan kodlar istege bağlı olarak kullanılabilir sensör cisim algıladığı zaman led yanar",
 "key" : "arduino"},
 	
