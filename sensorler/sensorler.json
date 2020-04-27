@@ -102,7 +102,7 @@ void loop()
 	
 {"isim":"TİTREŞİM SENSÖRÜ",
 "aciklama":"Piezo Titreşim Sensörü ; Piezo öğeleri, titreşim veya bir darbeyi algılamak için kullanılan bir sensördür. Film ileri geri hareket ettikçe ufak bir AC ve (+/- 90V'a kadar) büyük voltaj yaratılır. Basit bir direnç, voltajı ADC seviyelerine indirebilir. Darbe algılama veya esnek switch için kullanılabilir.",
-"sema":"https://i.imgyukle.com/2020/04/27/rVy2Bc.pnghttps://market.projehocam.com/wp-content/uploads/sw-420-sensor.jpg",
+"sema":"https://i.imgyukle.com/2020/04/28/rV0mRH.png",
 "code" : "
 int vibration=7;  //Pin bağlantıları sensör için
 int led=13;    //led için
