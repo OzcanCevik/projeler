@@ -101,31 +101,126 @@ void loop()
 "key" : "arduino"},
 	
 {"isim":"TİTREŞİM SENSÖRÜ",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://market.projehocam.com/wp-content/uploads/sw-420-sensor.jpg",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
+"aciklama":"Piezo Titreşim Sensörü ; Piezo öğeleri, titreşim veya bir darbeyi algılamak için kullanılan bir sensördür. Film ileri geri hareket ettikçe ufak bir AC ve (+/- 90V'a kadar) büyük voltaj yaratılır. Basit bir direnç, voltajı ADC seviyelerine indirebilir. Darbe algılama veya esnek switch için kullanılabilir.",
+"sema":"https://i.imgyukle.com/2020/04/27/rVy2Bc.pnghttps://market.projehocam.com/wp-content/uploads/sw-420-sensor.jpg",
+"code" : "
+int vibration=7;  //Pin bağlantıları sensör için
+int led=13;    //led için
+ 
+void setup() {
+  pinMode(vibration,INPUT);  //sensör sinyal pini giriş olarak ayarlandı
+  pinMode(led,OUTPUT);   //led çıkış olarak ayarlandı
+}
+ 
+void loop() {
+ 
+  int val = digitalRead(vibration);  //val değişkenine sensörden okunan değer atandı
+ 
+  if(val==1)   //değişken içindeki değer 1 ise
+  {
+    digitalWrite(led,HIGH);
+    delay(1000);
+    digitalWrite(led,LOW);   //burayı çalıştır
+    delay(1000);
+   }
+   else    //değil ise (0 ise)
+   digitalWrite(led,LOW);  //burayı çalıştır
+}  ",
+"aciklama1" : "Bağlantılar , VCC/VCC , GND/GND , DO/D7  Led/13direnç üzerinden",
 "key" : "arduino"},
+	
+
+
 	
 {"isim":"TİLT SWİTCH MODÜLÜ",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://arduinomodules.info/wp-content/uploads/KY-020_tilt_switch_module_arduino.jpg",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
+"aciklama":"Tilt sensörleri oryantasyon ya da eğimi saptamak amacıyla kullanılan sensörlerdir. Çoğunlukla “civa anahtarları”, “tilt anahtarları” ya da “döner top sensörleri” olarak adlandırılırlar.genellikle içi oyuk silindirik şekillerde olurlar.",
+"sema":"https://i.imgyukle.com/2020/04/27/rVrXhe.png",
+"code" : "
+int led_pin = 13; //Led in bağlı olduğu pin
+int switch_pin = 3; //Switch in bağlı olduğu pin
+int val; //değer saklamak için değişken
+
+void setup()
+{
+  pinMode(led_pin, OUTPUT); //led çıkış yapıldı.
+  pinMode(switch_pin, INPUT); //modül giriş olarak ayarlandı.
+}
+
+void loop()
+{
+  val = digitalRead(switch_pin); //val değişkenine switch modülünden okunan değer atıldı.
+  if(val == HIGH)  //val değişkeni içindeki değer 1 ise
+  {
+    digitalWrite(led_pin, HIGH); //burayı çalıştır
+  }
+  else    //değilse
+  {
+    digitalWrite(led_pin, LOW);  //burayı çalıştır
+  }
+}  ",
+"aciklama1" : "Bağlantılar = (S Pin 3)  , (vcc +5V)  , (- GND) ",
 "key" : "arduino"},
+	
+	
+
 	
 {"isim":"RGB LED MODÜLÜ",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://www.robotistan.com/3-renkli-rgb-led-modulu-smd-rgb-led-13708-54-B.jpg",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
+"aciklama":"Bağlantılar R,G,B pinleri dijital pinlere geri kalan pin ise gnd ye bağlanmalıdır  Direnç olarak 100 veya 220 ohm işinizi görür direnç olmadan çalıştırmayın",
+"sema":"https://i.imgyukle.com/2020/04/27/rVQQJN.png",
+"code" : "
+int r=3;  
+int g=5;  //dijital pinler
+int b=6;
+ 
+void setup() {
+ 
+pinMode(r,OUTPUT);
+pinMode(g,OUTPUT);  //pinler çıkış olarak ayarlandı.
+pinMode(b,OUTPUT);
+}
+ 
+void loop() {
+analogWrite(r,0);
+analogWrite(g,255);  //analogWrite komutu ile seçili pine 0 ile 255 arasında pwm sinyali gönderiyoruz. Burada sinyal pwm değeri 0 ise led yanmayacak, 255 ise tam parlaklıkla yanacaktır. Yukarıdaki örnekte kırmızıya 0, yeşile 255 ve maviye de 180 pwm değeri gönderdik. Bu durumda led bu gönderdiğimiz 3 sinyal durumuna göre karışım bir renk verecektir
+analogWrite(b,180);
+delay(500);
+}  ",
+"aciklama1" : "RGB ledler normalde 3 farklı ledden oluşur. Bu ledler sırasıyla , R , G, B dir bu pinlere voltaj vererek istediniz ledi yakabilirsiniz.",
 "key" : "arduino"},
 	
+	
+
+	
 {"isim":"KIZILÖTESİ LED MODÜLÜ",
-"aciklama":"Bu Bir Sensor Uygulaması",
+"aciklama":"Bağlantılar = GND,GND  VCC,VCC  OUT,10  nolu pine bağlanmalıdır",
 "sema":"https://st3.myideasoft.com/idea/bx/32/myassets/products/065/kizil-otesi-engel-sensoru-arduino-kizil-otesi-modul.jpg?revision=1560357559",
-"code" : "(void serialEvent() {})",
-"aciklama1" : "Açıklama 2",
+"code" : "
+#define Sensor 10
+// #define led 11  isteğe bağlı kullanım
+void setup()
+{
+       pinMode(Sensor, INPUT); //10 nolu pin giriş olarak belirtilir
+//	pinMode(led, OUTPUT);  isteğe bağlı kullanım
+ 
+      Serial.begin(9600);   //Serial haberleşme başlatılır.
+      Serial.println("Kızıl Ötesi Sensoru Testi"); //Ekrana yazı yazdırılır
+      delay(2000);  //her yazmadan sonra bekle
+}
+void loop()
+{
+     Serial.print(digitalRead(Sensor));  //10 nolu pin okunur (voltaj olup olmadığına bakılır) ve ekrana yazdırılır
+     Serial.print(","); 
+	/* if(digitalRead(Sensor) == 1)
+          {
+               digitalWrite(led, HIGH);
+          }                                   //isteğe bağlı kullanım
+     else
+          {
+               digitalWrite(led, LOW);
+          } */
+     delay(100);
+}   ",
+"aciklama1" : "Kızılötesi sensör herhangi bir cisim algıladığı zaman çıkışına lojik1 yollar. Yorum satırı yapılan kodlar istege bağlı olarak kullanılabilir sensör cisim algıladığı zaman led yanar",
 "key" : "arduino"},
 	
 
