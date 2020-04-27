@@ -63,7 +63,7 @@ digitalWrite(trig , LOW);  //trig 2mikro saniye boyunca 0 volta çekildi
 
 {"isim":"LDR",
 "aciklama":"LDR (Light Dependent Resistor) Türkçede “Işığa Bağımlı Dirençanlamına gelmektedir. Bir diğer adı da foto dirençtir. LDR’ler bulundukları devrelerde değişen direnç değerleri ile bir çıkış sağlarlar. Üzerine düşen ışık şiddeti ile ters orantılı bir çalışma prensibine sahiptir. Yani üzerine düşen ışık şiddeti arttıkça sahip olduğu direnç değeri azalır, ışık şiddeti azaldıkça sahip olduğu direnç değeri artar.",
-"sema":"https://ozgurseremet.com/wp-content/uploads/2019/08/LDR-foto-Diren%C3%A7.jpg",
+"sema":"https://i.imgyukle.com/2020/04/28/rVwt0h.png",
 "code" : "
 void setup() {
  Serial.begin(9600); //Serial haberleşme başlatıldı
