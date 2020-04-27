@@ -196,14 +196,14 @@ delay(500);
 "sema":"https://st3.myideasoft.com/idea/bx/32/myassets/products/065/kizil-otesi-engel-sensoru-arduino-kizil-otesi-modul.jpg?revision=1560357559",
 "code" : "
 #define Sensor 10
-// #define led 11  isteğe bağlı kullanım
+//#define led 11  isteğe bağlı kullanım
 void setup()
 {
        pinMode(Sensor, INPUT); //10 nolu pin giriş olarak belirtilir
 //	pinMode(led, OUTPUT);  isteğe bağlı kullanım
  
       Serial.begin(9600);   //Serial haberleşme başlatılır.
-      Serial.println("Kızıl Ötesi Sensoru Testi"); //Ekrana yazı yazdırılır
+      Serial.println(Kızıl Ötesi Sensoru Testi); //Ekrana yazı yazdırılır
       delay(2000);  //her yazmadan sonra bekle
 }
 void loop()
@@ -218,7 +218,8 @@ void loop()
           {
                digitalWrite(led, LOW);
           } */
-     delay(100); }   ",
+     delay(100); }
+",
 "aciklama1" : "Kızılötesi sensör herhangi bir cisim algıladığı zaman çıkışına lojik1 yollar. Yorum satırı yapılan kodlar istege bağlı olarak kullanılabilir sensör cisim algıladığı zaman led yanar",
 "key" : "arduino"},
 	
