@@ -179,7 +179,7 @@ void loop() {
 	
 {"isim":"TİLT SWİTCH MODÜLÜ",
 "aciklama":"Tilt sensörleri oryantasyon ya da eğimi saptamak amacıyla kullanılan sensörlerdir. Çoğunlukla “civa anahtarları”, “tilt anahtarları” ya da “döner top sensörleri” olarak adlandırılırlar.genellikle içi oyuk silindirik şekillerde olurlar.",
-"sema":"https://i.imgyukle.com/2020/04/28/rVA1DG.jpg",
+"sema":"https://i.imgyukle.com/2020/04/28/rnQqT0.png",
 "code" : "
 int led_pin = 13; //Led in bağlı olduğu pin
 int switch_pin = 3; //Switch in bağlı olduğu pin
