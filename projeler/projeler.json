@@ -27,12 +27,12 @@ digitalWrite(trigPin, LOW);     //buna görede cisim olup olmadığı denetlenir
 sure = pulseIn(echoPin, HIGH);
 mesafe = (sure/2) / 29.1;
    if (mesafe > 200 || mesafe < 0){  //cisim uzaklığı 200cm den büyük veya 0cm den küçük ise menzil dışı uyarısı verir
-   Serial.println(Menzil Disi);   //seri monitöre uyarıyı yazdırma 
+   Serial.println(Menzil Disi);   //seri monitöre uyarıyı yazdırma //hata alırsanız kelimeyi çift tırnak içinde yazın
      digitalWrite(2 , LOW);    //sensör cisim algılamazsa 2 numaralı pin 0 volta çekilir
    }
    else {
      digitalWrite(2 , HIGH);   //sensör cisim algılarsa 2 numaralı pin aktif olur.(5v)
-   Serial.print(mesafe);      //uzaklığın serial monitöre yazdırılması
+   Serial.print(mesafe);      //uzaklığın serial monitöre yazdırılması  //Hata alır iseniz mesafe yi çift tırnak içinde yazın
    Serial.println(cm);    //seri monitöre yazdırma (cm)
    }
 delay(500);}   ",
@@ -319,9 +319,9 @@ void loop()
   
   
   lcd.setCursor(11, 0);
-  lcd.print(Hello);   //sağ üste yazılıcak kelime  kod hata vermesi durumunda kelimeyi çift tırnak içinde yazın
+  lcd.print(Hello);   //sağ üste yazılıcak kelime , kod hata vermesi durumunda kelimeyi çift tırnak içinde yazın
   lcd.setCursor(11, 2);
-  lcd.print(World);   //sağ alta yazılıcak kelime kod hata vermesi durumunda kelimeyi çift tırnak içinde yazın
+  lcd.print(World);   //sağ alta yazılıcak kelime ,  kod hata vermesi durumunda kelimeyi çift tırnak içinde yazın
   delay(500);
   lcd.clear(); }  ",
 "aciklama1" : "NOT/Gerekli olan kütüphaneyi eklemez iseniz devre çalışmicaktır",
@@ -446,7 +446,7 @@ void setup()
 void loop()
 {
  int isik_degeri = analogRead(LDRPin);  //ışık_degeri değişkenine ldr den okunan değer aktarıldı.
-Serial.println(isik_degeri);           //ışık değeri ekrana yazdırıldı.
+Serial.println(isik_degeri);           //ışık değeri ekrana yazdırıldı.  //kod hata vermesi durumunda kelimey çift tırnak içide yazın
 delay(100);                           //değerlerin arka arkaya yazılma süresi. 
  if(isik_degeri<200)                 //okunan ışık değeri 200 den küçük ise
  {
@@ -743,7 +743,7 @@ void loop() {
 	
 	
 {"isim":"Pic Programlama Ders 1",
-"aciklama":"Mehmet manava gidiyor. Manavda sadece muz, elma ve üzüm var. Manav, Mehmet’e hangi meyveden istediğini sorar.",
+"aciklama":"Çok yakında",
 "sema":"https://st1.myideasoft.com/idea/ct/82/myassets/blogs/python-ne-icin-kullanilir.jpg",
 "code" : "code",
      
@@ -758,7 +758,7 @@ void loop() {
 
 
 {"isim":"SMD 32 DERS",
-"aciklama":"Mehmet manava gidiyor. Manavda sadece muz, elma ve üzüm var. Manav, Mehmet’e hangi meyveden istediğini sorar.",
+"aciklama":"ÇOK YAKINDA",
 "sema":"https://st1.myideasoft.com/idea/ct/82/myassets/blogs/python-ne-icin-kullanilir.jpg",
 "code" : "if meyve ==('uz'):",
      
@@ -773,8 +773,8 @@ void loop() {
 
 
 {"isim":"Raspery",
-"aciklama":"Mehmet manava gidiyor. Manavda sadece muz, elma ve üzüm var. Manav, Mehmet’e hangi meyveden istediğini sorar.",
-"sema":"https://st1.myideasoft.com/idea/ct/82/myassets/blogs/python-ne-icin-kullanilir.jpg",
+"aciklama":" Raspberry ile Karaşimşek devresi",
+"sema":"https://i.imgyukle.com/2020/04/29/rQZiUI.jpg",
 "code" : "if meyve ==('uz'):",
      
 "aciklama1" : "Mehmet’in manav alışverişinin kodları nasıl olmalıdır?",
