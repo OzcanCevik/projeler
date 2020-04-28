@@ -82,9 +82,23 @@ void loop()
 {"isim":"RÖLE",
 "aciklama":"Röle, aynı zamanda izolasyon sağlayan elektromekanik bir komponenttir. Kontrol (geliştirme) kartları ve shiled'ın bağlı olduğu düşük güç tarafıyla, röle modülünün çalıştığı yüksek güç tarafında, röle yoluyla bağlantı koparılmıştır. Bu şekilde yüksek voltaj/akım koruması sağlanmış olur",
 "sema":"https://i.imgyukle.com/2020/04/28/rnP0wy.jpg",
-"code" : "",
+"code" : "
+#define role 2              // Röle kontrol ucu 
+
+void setup() { 
+pinMode(role, OUTPUT);      // Röle kontrol ucu çıkış olarak tanımlanmıştır 
+} 
+
+void loop()  
+digitalWrite(role,LOW);    // Röle'nin kontrol edildiği pin - Normalde açık uç kapanır
+delay(2000);               // 2 Saniye Bekle 
+digitalWrite(role,HIGH);   // Röle'nin kontrol edildiği pin - Normalde kapalı uç açılır
+delay(2000);               // 2 Saniye Bekle 
+}  ",
 "aciklama1" : "Bağlantılar : S/D5 , +/VCC , -/GND , Ortak no ve nc yazan kısımada ister 220v lamba ister motor bağlayın ortak yazan uca güç kaynağının + sını bağlayıp diyer uçtan çıkış alın. Ve yük devresini tamamlayın",
 "key" : "arduino"},
+	
+	
 	
 {"isim":"JOYSTİCK",
 "aciklama":"Bu Bir Sensor Uygulaması",
@@ -92,11 +106,33 @@ void loop()
 "code" : "https://www.etkilesimliogrenme.com/joystick-kullanimi",
 "aciklama1" : "Açıklama 2",
 "key" : "arduino"},
+	
+	
 
 {"isim":"DARBE SENSÖRÜ",
 "aciklama":"Bu Bir Sensor Uygulaması",
 "sema":"https://n11scdn.akamaized.net/a1/450/elektronik/diger/darbe-sensor-modulu-arduino__0822448645984719.jpg",
-"code" : "(vo)",
+"code" : "
+int Led = 13;// LED pin
+int Shock = 3; //sensör pin
+int val;
+
+void setup () {
+ Serial.begin(9600);   //serial haberleşme başlatıldı
+ pinMode(Led, OUTPUT);  //giriş çıkış tanımlamaları
+ pinMode(Shock, INPUT);  // ""
+}
+
+void loop () {
+ val = digitalRead (Shock); //3 numaralı pinden okunan değer val içine atıldı
+ Serial.println(val);  //3 numaralı pindeki değer ekrana yazdırıldı
+ if (val == HIGH) {  //val değişkeni içindeki değer 1 ise
+  digitalWrite(Led, LOW);  //bunu yap ledi söndür
+ }
+ else {   //değil ise
+  digitalWrite(Led, HIGH);  //ledi yak
+ }
+}  ",
 "aciklama1" : "Açıklama 2",
 "key" : "arduino"},
 	
