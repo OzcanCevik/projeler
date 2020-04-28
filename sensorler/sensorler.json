@@ -81,7 +81,7 @@ void loop()
 
 {"isim":"RÖLE",
 "aciklama":"Röle, aynı zamanda izolasyon sağlayan elektromekanik bir komponenttir. Kontrol (geliştirme) kartları ve shiled'ın bağlı olduğu düşük güç tarafıyla, röle modülünün çalıştığı yüksek güç tarafında, röle yoluyla bağlantı koparılmıştır. Bu şekilde yüksek voltaj/akım koruması sağlanmış olur",
-"sema":"",
+"sema":"https://i.imgyukle.com/2020/04/28/rnP0wy.jpg",
 "code" : "",
 "aciklama1" : "Bağlantılar : S/D5 , +/VCC , -/GND , Ortak no ve nc yazan kısımada ister 220v lamba ister motor bağlayın ortak yazan uca güç kaynağının + sını bağlayıp diyer uçtan çıkış alın. Ve yük devresini tamamlayın",
 "key" : "arduino"},
@@ -96,7 +96,7 @@ void loop()
 {"isim":"DARBE SENSÖRÜ",
 "aciklama":"Bu Bir Sensor Uygulaması",
 "sema":"https://n11scdn.akamaized.net/a1/450/elektronik/diger/darbe-sensor-modulu-arduino__0822448645984719.jpg",
-"code" : "(void serialEvent() {})",
+"code" : "(vo)",
 "aciklama1" : "Açıklama 2",
 "key" : "arduino"},
 	
