@@ -83,7 +83,7 @@ void loop()
 "aciklama":"Röle, aynı zamanda izolasyon sağlayan elektromekanik bir komponenttir. Kontrol (geliştirme) kartları ve shiled'ın bağlı olduğu düşük güç tarafıyla, röle modülünün çalıştığı yüksek güç tarafında, röle yoluyla bağlantı koparılmıştır. Bu şekilde yüksek voltaj/akım koruması sağlanmış olur",
 "sema":"http://blog.ikizoglu.com/wp-content/uploads/2018/02/r%C3%B6le-mod%C3%BCl%C3%BC.jpg",
 "code" : "",
-"aciklama1" : "Resimde görünen Klemens girişlerinden normalde açık uçlarına ",
+"aciklama1" : "Bağlantılar : S/D5 , +/VCC , -/GND , Ortak no ve nc yazan kısımada ister 220v lamba ister motor bağlayın ortak yazan uca güç kaynağının + sını bağlayıp diyer uçtan çıkış alın. Ve yük devresini tamamlayın",
 "key" : "arduino"},
 	
 {"isim":"JOYSTİCK",
