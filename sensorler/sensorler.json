@@ -81,7 +81,7 @@ void loop()
 
 {"isim":"RÖLE",
 "aciklama":"Röle, aynı zamanda izolasyon sağlayan elektromekanik bir komponenttir. Kontrol (geliştirme) kartları ve shiled'ın bağlı olduğu düşük güç tarafıyla, röle modülünün çalıştığı yüksek güç tarafında, röle yoluyla bağlantı koparılmıştır. Bu şekilde yüksek voltaj/akım koruması sağlanmış olur",
-"sema":"https://www.motorobit.com/class/INNOVAEditor/assets/Role%20modulu%20kullan%C4%B1m%C4%B1.fw.png",
+"sema":"http://blog.ikizoglu.com/wp-content/uploads/2018/02/r%C3%B6le-mod%C3%BCl%C3%BC.jpg",
 "code" : "",
 "aciklama1" : "Resimde görünen Klemens girişlerinden normalde açık uçlarına ",
 "key" : "arduino"},
