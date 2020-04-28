@@ -1,4 +1,49 @@
 [
+
+	
+	
+{"isim":"JOYSTİCK",
+"aciklama":"Bu Bir Sensor Uygulaması",
+"sema":"https://components101.com/sites/default/files/inline-images/Joystick-Module-interfacing-with-Arduino.png",
+"code" : "https://www.etkilesimliogrenme.com/joystick-kullanimi",
+"aciklama1" : "Açıklama 2",
+"key" : "arduino"},
+	
+	
+
+{"isim":"KIZILÖTESİ LED MODÜLÜ",
+"aciklama":"Bağlantılar = GND,GND  VCC,VCC  OUT,10  nolu pine bağlanmalıdır",
+"sema":"https://st3.myideasoft.com/idea/bx/32/myassets/products/065/kizil-otesi-engel-sensoru-arduino-kizil-otesi-modul.jpg?revision=1560357559",
+"code" : "
+#define Sensor 10
+// #define led 11  isteğe bağlı kullanım
+void setup()
+{
+       pinMode(Sensor, INPUT); //10 nolu pin giriş olarak belirtilir
+//	pinMode(led, OUTPUT);  isteğe bağlı kullanım
+ 
+      Serial.begin(9600);   //Serial haberleşme başlatılır.
+      Serial.println(Kızıl Ötesi Sensoru Testi); //Ekrana yazı yazdırılır
+      delay(2000);  //her yazmadan sonra bekle
+}
+void loop()
+{
+     Serial.print(digitalRead(Sensor));  //10 nolu pin okunur (voltaj olup olmadığına bakılır) ve ekrana yazdırılır
+     Serial.print(","); 
+	/* if(digitalRead(Sensor) == 1)
+          {
+               digitalWrite(led, HIGH);
+          }                                   //isteğe bağlı kullanım
+     else
+          {
+               digitalWrite(led, LOW);
+          } */
+     delay(100); }   ",
+"aciklama1" : "Kızılötesi sensör herhangi bir cisim algıladığı zaman çıkışına lojik1 yollar. Yorum satırı yapılan kodlar istege bağlı olarak kullanılabilir sensör cisim algıladığı zaman led yanar",
+"key" : "arduino"},
+	
+	
+	
 	
 {"isim":"MZ80",
 "aciklama":"Mz80 Kızılötesi Sensör. Geniş mesafe ölçüm aralığına sahip bir kızılötesi mesafe ölçüm sensörüdür. Cisim algılaması gereken bir çok robot projesinde ve özel projelerde kullanılabilir. Arkasında bulunan trimpot ile ölçüm menzili 3 cm ile 80 cm aralığında ayarlanabilir. Tepki süresi düşük, güçlü sensörlerdir. Çlaışma voltajı=5V dur , Bağlantılar / Kırmızı : +5V / Siyah : Toprak / Sarı : Data",
@@ -96,19 +141,11 @@ delay(2000);               // 2 Saniye Bekle
 "aciklama1" : "Bağlantılar : S/D5 , +/VCC , -/GND , Ortak no ve nc yazan kısımada ister 220v lamba ister motor bağlayın ortak yazan uca güç kaynağının + sını bağlayıp diyer uçtan çıkış alın. Ve yük devresini tamamlayın",
 "key" : "arduino"},
 	
-	
-	
-{"isim":"JOYSTİCK",
-"aciklama":"Bu Bir Sensor Uygulaması",
-"sema":"https://components101.com/sites/default/files/inline-images/Joystick-Module-interfacing-with-Arduino.png",
-"code" : "https://www.etkilesimliogrenme.com/joystick-kullanimi",
-"aciklama1" : "Açıklama 2",
-"key" : "arduino"},
-	
+
 	
 
 {"isim":"DARBE SENSÖRÜ",
-"aciklama":"Bu Bir Sensor Uygulaması",
+"aciklama":"Arduino Darbe Sensörü Knock Sensor Module KY-031. Arduino darbe sensör modülü ve bir dijital 13 arayüzü, dahili LED perküsyon flaşör üretmek için basit bir devre olarak üretilmiştir. gelen sinyaller led'in yanıp sönmesini sağlayacaktır.",
 "sema":"https://n11scdn.akamaized.net/a1/450/elektronik/diger/darbe-sensor-modulu-arduino__0822448645984719.jpg",
 "code" : "
 int Led = 13;// LED pin
@@ -129,7 +166,7 @@ void loop () {
  else {   //değil ise
   digitalWrite(Led, HIGH);  //ledi yak
  } }    ",
-"aciklama1" : "Açıklama 2",
+"aciklama1" : "Bağlantılar : S/D3 , -/GND , +/VCC Şeklinde bağlayarak serial monitör üzerinden çıkış alabilirsiniz isteğe bağlı olarakta d13 pinine led bağlayabilirsiniz.",
 "key" : "arduino"},
 	
 {"isim":"TİTREŞİM SENSÖRÜ",
