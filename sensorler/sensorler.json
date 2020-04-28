@@ -83,18 +83,16 @@ void loop()
 "aciklama":"Röle, aynı zamanda izolasyon sağlayan elektromekanik bir komponenttir. Kontrol (geliştirme) kartları ve shiled'ın bağlı olduğu düşük güç tarafıyla, röle modülünün çalıştığı yüksek güç tarafında, röle yoluyla bağlantı koparılmıştır. Bu şekilde yüksek voltaj/akım koruması sağlanmış olur",
 "sema":"https://i.imgyukle.com/2020/04/28/rnP0wy.jpg",
 "code" : "
-#define role 2              // Röle kontrol ucu 
-
+#define role 2    // Röle kontrol ucu 
 void setup() { 
-pinMode(role, OUTPUT);      // Röle kontrol ucu çıkış olarak tanımlanmıştır 
+pinMode(role, OUTPUT);    // Röle kontrol ucu çıkış olarak tanımlanmıştır 
 } 
-
 void loop()  
 digitalWrite(role,LOW);    // Röle'nin kontrol edildiği pin - Normalde açık uç kapanır
 delay(2000);               // 2 Saniye Bekle 
 digitalWrite(role,HIGH);   // Röle'nin kontrol edildiği pin - Normalde kapalı uç açılır
 delay(2000);               // 2 Saniye Bekle 
-}  ",
+}   ",
 "aciklama1" : "Bağlantılar : S/D5 , +/VCC , -/GND , Ortak no ve nc yazan kısımada ister 220v lamba ister motor bağlayın ortak yazan uca güç kaynağının + sını bağlayıp diyer uçtan çıkış alın. Ve yük devresini tamamlayın",
 "key" : "arduino"},
 	
@@ -120,19 +118,17 @@ int val;
 void setup () {
  Serial.begin(9600);   //serial haberleşme başlatıldı
  pinMode(Led, OUTPUT);  //giriş çıkış tanımlamaları
- pinMode(Shock, INPUT);  // ""
+ pinMode(Shock, INPUT);
 }
-
 void loop () {
- val = digitalRead (Shock); //3 numaralı pinden okunan değer val içine atıldı
- Serial.println(val);  //3 numaralı pindeki değer ekrana yazdırıldı
- if (val == HIGH) {  //val değişkeni içindeki değer 1 ise
-  digitalWrite(Led, LOW);  //bunu yap ledi söndür
+ val = digitalRead (Shock);  //3 numaralı pinden okunan değer val içine atıldı
+ Serial.println(val);       //3 numaralı pindeki değer ekrana yazdırıldı
+ if (val == HIGH) {        //val değişkeni içindeki değer 1 ise
+  digitalWrite(Led, LOW);  //bunu yap, ledi söndür
  }
  else {   //değil ise
   digitalWrite(Led, HIGH);  //ledi yak
- }
-}  ",
+ } }    ",
 "aciklama1" : "Açıklama 2",
 "key" : "arduino"},
 	
@@ -147,7 +143,6 @@ void setup() {
   pinMode(vibration,INPUT);  //sensör sinyal pini giriş olarak ayarlandı
   pinMode(led,OUTPUT);   //led çıkış olarak ayarlandı
 }
- 
 void loop() {
  
   int val = digitalRead(vibration);  //val değişkenine sensörden okunan değer atandı
@@ -161,7 +156,7 @@ void loop() {
    }
    else    //değil ise (0 ise)
    digitalWrite(led,LOW);  //burayı çalıştır
-}  ",
+}    ",
 "aciklama1" : "Bağlantılar , VCC/VCC , GND/GND , DO/D7  Led/13direnç üzerinden",
 "key" : "arduino"},
 	
@@ -181,7 +176,6 @@ void setup()
   pinMode(led_pin, OUTPUT); //led çıkış yapıldı.
   pinMode(switch_pin, INPUT); //modül giriş olarak ayarlandı.
 }
-
 void loop()
 {
   val = digitalRead(switch_pin); //val değişkenine switch modülünden okunan değer atıldı.
@@ -192,8 +186,7 @@ void loop()
   else    //değilse
   {
     digitalWrite(led_pin, LOW);  //burayı çalıştır
-  }
-}  ",
+  }  }    ",
 "aciklama1" : "Bağlantılar = (S Pin 3)  , (vcc +5V)  , (- GND) ",
 "key" : "arduino"},
 	
