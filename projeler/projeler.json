@@ -636,118 +636,16 @@ void loop() {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 	
 {"isim":"Pic Programlama Ders 1",
 "aciklama":"Çok yakında",
-"sema":"https://st1.myideasoft.com/idea/ct/82/myassets/blogs/python-ne-icin-kullanilir.jpg",
+"sema":"https://i.imgyukle.com/2020/04/29/rQ92ZY.jpg",
 "code" : "code",
      
-"aciklama1" : "Mehmet’in manav alışverişinin kodları nasıl olmalıdır?",
+"aciklama1" : "PIC Serisi mikroişlemciler MICROCHIP firması tarafından geliştirilmiş ve üretim amacı çok fonksiyonlu logic uygulamalarının hızlı ve ucuz bir Mikroişlemci ile yazılım yoluyla karşılanmasıdır. ... PIC işlemcileri RISC benzeri işlemciler olarak anılır.",
 
 "key" : "pic"},
 
@@ -757,12 +655,12 @@ void loop() {
 
 
 
-{"isim":"SMD 32 DERS",
+{"isim":"STM 32",
 "aciklama":"ÇOK YAKINDA",
-"sema":"https://st1.myideasoft.com/idea/ct/82/myassets/blogs/python-ne-icin-kullanilir.jpg",
+"sema":"https://coskuntasdemir.com/wp-content/uploads/2011/10/stm32f4_discovery2.jpg",
 "code" : "if meyve ==('uz'):",
      
-"aciklama1" : "Mehmet’in manav alışverişinin kodları nasıl olmalıdır?",
+"aciklama1" : "STM32, STMicroelectronics'in 32-bit mikrodenetleyici entegre devreler ailesidir. STM32 yongaları, Cortex-M33F, Cortex-M7F, Cortex-M4F, Cortex-M3, Cortex-M0 + veya Cortex-M0 gibi aynı 32 bit ARM işlemci çekirdeğini temel alan ilgili serilere gruplanmıştır.",
 
 "key" : "smd32"},
 
@@ -773,12 +671,62 @@ void loop() {
 
 
 {"isim":"Raspery",
-"aciklama":" Raspberry ile Karaşimşek devresi",
+"aciklama":" Raspberry ile Sırayla yanıp sönen ledler",
 "sema":"https://i.imgyukle.com/2020/04/29/rQb2Zo.jpg",
-"code" : "if meyve ==('uz'):",
-     
-"aciklama1" : "Mehmet’in manav alışverişinin kodları nasıl olmalıdır?",
+"code" : "
+import ASUS.GPIO as GPIO
+from time import sleep
 
-"key" : "raspery"}
+led = [37,35,33,31,29,27] # LED'ler için bir liste daha sonra ledleri yakmak için bu liste adını kullanıcaz
+
+GPIO.setmode(GPIO.BOARD) # Fiziksel pin numaralandırılması
+GPIO.setwarnings(False) # Uyarıları kapat
+
+GPIO.setup(led,GPIO.OUT) # Bütün pinleri çıkış yap
+
+"""
+Listelerde sayım sıfırdan başlar. Yani bizim birinci elemanımız ona göre sıfırdır.
+"""
+
+while True: # Sonsuz döngü
+    """             SOLDAN SAĞA             """
+    ###########################################
+    GPIO.output(led[0],GPIO.HIGH) # 1. LED yandı  # burada led[0] dizi içerisindeki 1. sayı oluyor. 37 
+    sleep(0.1)
+    GPIO.output(led[0],GPIO.LOW) # 1. LED söndü
+    GPIO.output(led[1],GPIO.HIGH) # 2. LED yandı # dizi içerisindeki 1. sıra 2. led numarasına denk geliyor çünkü dizide 0 dan saymaya başlanır.
+    sleep(0.1)
+    GPIO.output(led[1],GPIO.LOW) # 2. LED söndü
+    GPIO.output(led[2],GPIO.HIGH) # 3. LED yandı
+    sleep(0.1)
+    GPIO.output(led[2],GPIO.LOW) # 3. LED söndü
+    GPIO.output(led[3],GPIO.HIGH) # 4. LED yandı
+    sleep(0.1)
+    GPIO.output(led[3],GPIO.LOW) # 4. LED söndü
+    GPIO.output(led[4],GPIO.HIGH) # 5. LED yandı
+    sleep(0.1)
+    GPIO.output(led[4],GPIO.LOW) # 5. LED söndü
+    GPIO.output(led[5],GPIO.HIGH) # 6. LED yandı
+    sleep(0.1)
+    GPIO.output(led[5],GPIO.LOW) # 6. LED söndü
+    
+    """             SAĞDAN SOLA             """
+    ###########################################    
+    GPIO.output(led[4],GPIO.HIGH) # 5. LED yandı
+    sleep(0.1)
+    GPIO.output(led[4],GPIO.LOW) # 5. LED söndü
+    GPIO.output(led[3],GPIO.HIGH) # 4. LED yandı
+    sleep(0.1)
+    GPIO.output(led[3],GPIO.LOW) # 4. LED söndü
+    GPIO.output(led[2],GPIO.HIGH) # 3. LED yandı
+    sleep(0.1)
+    GPIO.output(led[2],GPIO.LOW) # 3. LED söndü
+    GPIO.output(led[1],GPIO.HIGH) # 2. LED yandı
+    sleep(0.1)
+    GPIO.output(led[1],GPIO.LOW) # 2. LED söndü",
+     
+"aciklama1" : "Pi’niz 26 adet GPIO portuna sahipse ledleri farklı pinlere takmak zorundasınız.",
+
+"key" : "raspery"},
 
 ]
