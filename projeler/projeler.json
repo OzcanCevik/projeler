@@ -684,12 +684,12 @@ GPIO.setwarnings(False) # Uyarıları kapat
 
 GPIO.setup(led,GPIO.OUT) # Bütün pinleri çıkış yap
 
-"""
-Listelerde sayım sıfırdan başlar. Yani bizim birinci elemanımız ona göre sıfırdır.
-"""
+
+#Listelerde sayım sıfırdan başlar. Yani bizim birinci elemanımız ona göre sıfırdır.
+
 
 while True: # Sonsuz döngü
-    """             SOLDAN SAĞA             """
+                 #SOLDAN SAĞA  
     ###########################################
     GPIO.output(led[0],GPIO.HIGH) # 1. LED yandı  # burada led[0] dizi içerisindeki 1. sayı oluyor. 37 
     sleep(0.1)
@@ -710,7 +710,7 @@ while True: # Sonsuz döngü
     sleep(0.1)
     GPIO.output(led[5],GPIO.LOW) # 6. LED söndü
     
-    """             SAĞDAN SOLA             """
+            # SAĞDAN SOLA             
     ###########################################    
     GPIO.output(led[4],GPIO.HIGH) # 5. LED yandı
     sleep(0.1)
