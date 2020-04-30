@@ -635,7 +635,7 @@ void loop() {
      
 "aciklama1" : "STM32, STMicroelectronics'in 32-bit mikrodenetleyici entegre devreler ailesidir. STM32 yongaları, Cortex-M33F, Cortex-M7F, Cortex-M4F, Cortex-M3, Cortex-M0 + veya Cortex-M0 gibi aynı 32 bit ARM işlemci çekirdeğini temel alan ilgili serilere gruplanmıştır.",
 
-"key" : "smd32"},
+"key" : "raspery"},
 
 
 {"isim":"STM 32",
