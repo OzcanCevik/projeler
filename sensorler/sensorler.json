@@ -3,17 +3,19 @@
 	
 	
 {"isim":"JOYSTİCK",
-"aciklama":"Bu Bir Sensor Uygulaması",
+"aciklama":"Joystick, iki eksende hareket etmeyi sağlayan iki potansiyometre bulunduran ve dikey hareketinde ise buton görevi gören bir modüldür. Joystick’leri genellikle oyun konsollarında ve uzaktan kumandalı araçlarda görürüz. Arduino Joystick shield butonu, diğer butonların tersine çalışan bir karakteristiğe sahiptir. Yani bir pullup butondur. Butona basmadığımızda 1, bastığımızda ise 0 değerini okuruz.",
 "sema":"https://components101.com/sites/default/files/inline-images/Joystick-Module-interfacing-with-Arduino.png",
 "code" : "
-const int SW_pin = 8; // digital pin connected to switch output
-const int X_pin = 0; // analog pin connected to X output
-const int Y_pin = 1; // analog pin connected to Y output
+const int SW_pin = 8; //Buton için pin tanımlama
+const int X_pin = 0; //Joystick X ekseni için pin tanımlama
+const int Y_pin = 1; //Joystick Y ekseni için pin tanımlama
 
 void setup() {
   pinMode(SW_pin, INPUT);
+  pinMode(X_pin , INPUT);
+  pinMode(Y_pin , INPUT);
   digitalWrite(SW_pin, HIGH);
-  Serial.begin(9600);
+  Serial.begin(9600);  
 }
 
 void loop() {
