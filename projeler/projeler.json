@@ -667,63 +667,6 @@ void loop() {
 
 
 
-{"isim":"Raspery",
-"aciklama":" Raspberry ile Sırayla yanıp sönen ledler",
-"sema":"https://i.imgyukle.com/2020/04/29/rQb2Zo.jpg",
-"code" : "
-import ASUS.GPIO as GPIO
-from time import sleep
 
-led = [37,35,33,31,29,27] # LED'ler için bir liste daha sonra ledleri yakmak için bu liste adını kullanıcaz
-
-GPIO.setmode(GPIO.BOARD) # Fiziksel pin numaralandırılması
-GPIO.setwarnings(False) # Uyarıları kapat
-
-GPIO.setup(led,GPIO.OUT) # Bütün pinleri çıkış yap
-
-
-#Listelerde sayım sıfırdan başlar. Yani bizim birinci elemanımız ona göre sıfırdır.
-
-
-while True: # Sonsuz döngü
-                 #SOLDAN SAĞA  
-    ###########################################
-    GPIO.output(led[0],GPIO.HIGH) # 1. LED yandı  # burada led[0] dizi içerisindeki 1. sayı oluyor. 37 
-    sleep(0.1)
-    GPIO.output(led[0],GPIO.LOW) # 1. LED söndü
-    GPIO.output(led[1],GPIO.HIGH) # 2. LED yandı # dizi içerisindeki 1. sıra 2. led numarasına denk geliyor çünkü dizide 0 dan saymaya başlanır.
-    sleep(0.1)
-    GPIO.output(led[1],GPIO.LOW) # 2. LED söndü
-    GPIO.output(led[2],GPIO.HIGH) # 3. LED yandı
-    sleep(0.1)
-    GPIO.output(led[2],GPIO.LOW) # 3. LED söndü
-    GPIO.output(led[3],GPIO.HIGH) # 4. LED yandı
-    sleep(0.1)
-    GPIO.output(led[3],GPIO.LOW) # 4. LED söndü
-    GPIO.output(led[4],GPIO.HIGH) # 5. LED yandı
-    sleep(0.1)
-    GPIO.output(led[4],GPIO.LOW) # 5. LED söndü
-    GPIO.output(led[5],GPIO.HIGH) # 6. LED yandı
-    sleep(0.1)
-    GPIO.output(led[5],GPIO.LOW) # 6. LED söndü
-    
-            # SAĞDAN SOLA             
-    ###########################################    
-    GPIO.output(led[4],GPIO.HIGH) # 5. LED yandı
-    sleep(0.1)
-    GPIO.output(led[4],GPIO.LOW) # 5. LED söndü
-    GPIO.output(led[3],GPIO.HIGH) # 4. LED yandı
-    sleep(0.1)
-    GPIO.output(led[3],GPIO.LOW) # 4. LED söndü
-    GPIO.output(led[2],GPIO.HIGH) # 3. LED yandı
-    sleep(0.1)
-    GPIO.output(led[2],GPIO.LOW) # 3. LED söndü
-    GPIO.output(led[1],GPIO.HIGH) # 2. LED yandı
-    sleep(0.1)
-    GPIO.output(led[1],GPIO.LOW) # 2. LED söndü   ",
-     
-"aciklama1" : "Pi’niz 26 adet GPIO portuna sahipse ledleri farklı pinlere bağlayarak test ediniz çıkış lar farklı olabilir",
-
-"key" : "raspery"},
 
 ]
