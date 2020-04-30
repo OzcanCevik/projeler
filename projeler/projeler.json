@@ -617,26 +617,6 @@ void loop() {
 
 	
 	
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
 {"isim":"Pic Programlama Ders 1",
 "aciklama":"Çok yakında",
 "sema":"https://i.imgyukle.com/2020/04/29/rQ92ZY.jpg",
@@ -650,8 +630,6 @@ void loop() {
 
 
 
-
-
 {"isim":"STM 32",
 "aciklama":"ÇOK YAKINDA",
 "sema":"https://coskuntasdemir.com/wp-content/uploads/2011/10/stm32f4_discovery2.jpg",
@@ -660,13 +638,6 @@ void loop() {
 "aciklama1" : "STM32, STMicroelectronics'in 32-bit mikrodenetleyici entegre devreler ailesidir. STM32 yongaları, Cortex-M33F, Cortex-M7F, Cortex-M4F, Cortex-M3, Cortex-M0 + veya Cortex-M0 gibi aynı 32 bit ARM işlemci çekirdeğini temel alan ilgili serilere gruplanmıştır.",
 
 "key" : "smd32"},
-
-
-
-
-
-
-
 
 
 ]
