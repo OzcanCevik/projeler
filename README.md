@@ -1,3 +1,5 @@
+Review the Projects file to view the codes
+
 {"isim":"HCSR04 Kullanımı uzaklık ve alarm devresi",
 "aciklama":"Ultrasonik mesafe sensörü kullanarak hem uzaklık ölçümü hemde cisim algılayınca uyarı veren devre. Malzemeler 1, HCSR04  2, buzzer veya led  3, jumper kablolar ve arduino",
 "sema":"https://i.imgyukle.com/2020/04/25/Q0LxYv.png",}
